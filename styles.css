@@ -242,3 +242,12 @@ h1 {
     padding-top: 4rem;
   }
 }
+
+@media (max-width: 360px) {
+  .card-grid,
+  .detail-grid,
+  .proof-layout,
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+}
