@@ -106,7 +106,7 @@ h1 {
   max-width: 12ch;
   margin-bottom: 1rem;
   font-size: clamp(2.8rem, 6vw, 5rem);
-  line-height: 0.98;
+  line-height: 1.08;
 }
 
 .hero-copy,
