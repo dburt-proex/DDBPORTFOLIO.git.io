@@ -9,6 +9,7 @@
   --line: rgba(148, 163, 184, 0.18);
   --accent: #7dd3fc;
   --accent-strong: #38bdf8;
+  --button-text-dark: #04111c;
   --shadow: 0 24px 60px rgba(2, 6, 23, 0.35);
 }
 
@@ -144,7 +145,7 @@ h1 {
 
 .button-primary {
   background: var(--accent-strong);
-  color: #04111c;
+  color: var(--button-text-dark);
 }
 
 .button-secondary {
