@@ -1,8 +1,8 @@
-# D4XXER.v1
+# DDB Portfolio
 
 ## Overview
 
-D4XXER.v1 is the foundation for my portfolio website. This repository will house the code, content, and design system for a fast, modern, and conversion-focused personal site.
+DDB Portfolio is the foundation for my personal portfolio website. This repository houses the code, content, and design system for a fast, modern, and conversion-focused site.
 
 ## Purpose
 
