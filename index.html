@@ -3,31 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DDB Portfolio | Builder, Strategist, Problem Solver</title>
-  <meta name="description" content="Personal portfolio site showcasing projects, skills, experience, and contact details.">
-  <meta property="og:title" content="DDB Portfolio">
-  <meta property="og:description" content="A conversion-focused personal portfolio with projects, experience, and contact options.">
+  <title>Drew Burt | AI Systems, Governance & Operator Infrastructure</title>
+  <meta name="description" content="Drew Burt builds governed AI systems, control layers, agent workflows, scoring models, audit trails, and operator infrastructure that turns ambiguity into execution.">
+  <meta property="og:title" content="Drew Burt | Governed AI Systems Builder">
+  <meta property="og:description" content="AI systems engineering, governance architecture, operator infrastructure, and field notes from active builds.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DDB Portfolio">
-  <meta name="twitter:description" content="Explore projects, skills, and experience in this modern personal portfolio.">
+  <meta name="theme-color" content="#07100d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="noise" aria-hidden="true"></div>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#">DDB Portfolio</a>
-      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <a class="brand" href="#home" aria-label="Drew Burt home">
+        <span class="brand-mark">DB</span>
+        <span>Drew Burt</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation"><span></span><span></span></button>
       <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+        <a href="#work">Selected work</a>
+        <a href="#system">How I work</a>
+        <a href="#writing">Field notes</a>
+        <a href="#contact" class="nav-cta">Start a conversation</a>
       </nav>
     </div>
   </header>
@@ -35,114 +36,144 @@
   <main id="home">
     <section class="hero section">
       <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Available for freelance, consulting, and high-impact roles</p>
-          <h1>Helping teams ship polished digital products that drive measurable results.</h1>
-          <p class="hero-copy">
-            I build modern web experiences, improve delivery systems, and turn complex ideas into practical outcomes.
-          </p>
+        <div class="hero-copy-wrap reveal">
+          <p class="eyebrow"><span class="status-dot"></span> AI Systems Engineer · Governance Architect · Operator</p>
+          <h1>I build AI systems that can be <em>trusted, tested, and operated.</em></h1>
+          <p class="hero-copy">I turn loose AI workflows into governed operating systems, with control layers, decision gates, scoring logic, audit trails, and execution infrastructure built for real use.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">View Projects</a>
-            <a class="btn btn-secondary" href="#contact">Book a Conversation</a>
+            <a class="btn btn-primary" href="#work">Inspect the work <span>↘</span></a>
+            <a class="btn btn-secondary" href="#contact">Discuss a system</a>
+          </div>
+          <div class="signal-strip" aria-label="Core capabilities">
+            <span>Governance control planes</span><span>Agent orchestration</span><span>Decision systems</span><span>Operator infrastructure</span>
           </div>
         </div>
-        <aside class="hero-card" aria-label="Key strengths">
-          <h2>What I focus on</h2>
-          <ul>
-            <li>Conversion-focused web experiences</li>
-            <li>Clean, maintainable frontend architecture</li>
-            <li>Execution speed without sacrificing quality</li>
-          </ul>
+
+        <aside class="control-panel reveal" aria-label="System status">
+          <div class="panel-head"><span>SYSTEM / PROFILE</span><span class="live">LIVE</span></div>
+          <div class="panel-grid">
+            <div><span class="label">Primary mode</span><strong>Execution-first</strong></div>
+            <div><span class="label">Control state</span><strong>Governed</strong></div>
+            <div><span class="label">Core output</span><strong>Operational systems</strong></div>
+            <div><span class="label">Current focus</span><strong>AI control layers</strong></div>
+          </div>
+          <div class="terminal-line"><span>&gt;</span> ambiguity → structure → evidence → action</div>
         </aside>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <div class="container narrow">
-        <h2>About</h2>
-        <p>
-          I’m a builder who combines technical execution with strategic thinking. My work spans product-minded frontend
-          development, UX-driven iteration, and practical systems that help teams move from idea to delivery with confidence.
-        </p>
+    <section class="proof-bar">
+      <div class="container proof-grid">
+        <div><strong>99</strong><span>governance tests passing in CASA milestone</span></div>
+        <div><strong>11/11</strong><span>core libraries completed in Operator Intelligence</span></div>
+        <div><strong>3</strong><span>deterministic execution gates: ALLOW / REVIEW / HALT</span></div>
+        <div><strong>1</strong><span>goal: make AI operationally accountable</span></div>
       </div>
     </section>
 
-    <section id="projects" class="section section-alt">
+    <section id="work" class="section">
       <div class="container">
-        <h2>Projects</h2>
+        <div class="section-head reveal">
+          <div><p class="kicker">Selected systems</p><h2>Work designed to signal depth, not volume.</h2></div>
+          <p>Each project attacks a different failure mode in modern AI deployment: weak controls, vague evaluation, unsafe code changes, fragmented operations, or poor execution visibility.</p>
+        </div>
+
         <div class="project-grid">
-          <article class="card">
-            <h3>Portfolio Platform Foundation</h3>
-            <p>Launched a lightweight, GitHub Pages-ready portfolio with responsive navigation and conversion-focused structure.</p>
-            <p class="meta">Stack: HTML, CSS, JavaScript</p>
+          <article class="project-card flagship reveal">
+            <div class="card-top"><span class="index">01</span><span class="badge">Flagship governance system</span></div>
+            <h3>CASA / Controlled Autonomous Systems Architecture</h3>
+            <p>A deterministic control plane positioned between agent reasoning and execution. It classifies risk, routes actions through ALLOW, REVIEW, or HALT, and preserves an auditable decision record.</p>
+            <ul class="feature-list"><li>Policy-based execution gates</li><li>Cryptographic decision ledger</li><li>Drift monitoring and replay</li><li>Governance analytics</li></ul>
+            <div class="card-foot"><span>Python · FastAPI · Pydantic · React</span><a href="https://github.com/dburt-proex/CASA-Flagship" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
           </article>
-          <article class="card">
-            <h3>UI Modernization Sprint</h3>
-            <p>Refreshed a legacy interface with modern layout patterns and clearer user journeys, improving engagement quality.</p>
-            <p class="meta">Focus: UX, accessibility, maintainability</p>
+
+          <article class="project-card reveal">
+            <div class="card-top"><span class="index">02</span><span class="badge">Audit infrastructure</span></div>
+            <h3>Operator Intelligence</h3>
+            <p>A commercial-grade audit system for evaluating AI and operator readiness across evidence quality, scoring precision, recommendation routing, governance discipline, and implementation maturity.</p>
+            <div class="card-foot"><span>Scoring · Findings · Standards · Playbooks</span><a href="https://github.com/dburt-proex/operator-intelligence" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
           </article>
-          <article class="card">
-            <h3>Delivery Workflow Optimization</h3>
-            <p>Streamlined project handoff and release steps to reduce friction, improve consistency, and accelerate shipping velocity.</p>
-            <p class="meta">Focus: process, tooling, quality control</p>
+
+          <article class="project-card reveal">
+            <div class="card-top"><span class="index">03</span><span class="badge">Developer control</span></div>
+            <h3>DiffWall</h3>
+            <p>A PR risk firewall for agent-written code. DiffWall inspects proposed changes, scores risk, and produces deterministic review output before AI-generated code reaches production.</p>
+            <div class="card-foot"><span>TypeScript · CLI · GitHub Actions</span><a href="https://github.com/dburt-proex?tab=repositories" target="_blank" rel="noopener noreferrer">Explore work ↗</a></div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="card-top"><span class="index">04</span><span class="badge">Instruction architecture</span></div>
+            <h3>PromptBP</h3>
+            <p>An instruction control layer for reliable AI work. It converts intent into structured roles, objectives, inputs, output contracts, operating rules, and recursive quality checks.</p>
+            <div class="card-foot"><span>Prompt systems · Control logic · Templates</span><a href="#contact">Request overview ↗</a></div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="card-top"><span class="index">05</span><span class="badge">Multi-agent systems</span></div>
+            <h3>Agent Orchestrator</h3>
+            <p>A visual workflow environment for composing specialist agents, tool integrations, approvals, routers, evaluators, joins, and persistent execution threads.</p>
+            <div class="card-foot"><span>React · Workflow graphs · Agent ops</span><a href="#contact">Partnership inquiry ↗</a></div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="card-top"><span class="index">06</span><span class="badge">Applied operations</span></div>
+            <h3>JobTap</h3>
+            <p>A verified homeowner-to-contractor routing platform built around structured intake, contractor scoring, operational workflows, and clear lead handoff.</p>
+            <div class="card-foot"><span>Routing · Airtable · Product systems</span><a href="https://github.com/dburt-proex?tab=repositories" target="_blank" rel="noopener noreferrer">Explore work ↗</a></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section">
+    <section id="system" class="section section-dark">
+      <div class="container system-grid">
+        <div class="section-head stacked reveal">
+          <p class="kicker">Operating method</p>
+          <h2>Systems over spectacle.</h2>
+          <p>I do not stop at a prototype or polished interface. I define the operating model behind the product, how decisions are made, what evidence is required, where humans intervene, and how failure is contained.</p>
+        </div>
+        <div class="method-stack">
+          <article class="method reveal"><span>01</span><div><h3>Frame the decision</h3><p>Define the objective, actors, constraints, failure cost, and required evidence before selecting tools.</p></div></article>
+          <article class="method reveal"><span>02</span><div><h3>Design the control layer</h3><p>Specify interfaces, policy gates, scoring logic, review paths, and state transitions.</p></div></article>
+          <article class="method reveal"><span>03</span><div><h3>Instrument the system</h3><p>Capture traceability, confidence, unknowns, drift, exceptions, and decision history.</p></div></article>
+          <article class="method reveal"><span>04</span><div><h3>Ship the operating artifact</h3><p>Deliver a usable product, SOP, control spec, evaluation model, or execution workflow.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="writing" class="section">
       <div class="container">
-        <h2>Skills</h2>
-        <ul class="chip-list">
-          <li>Frontend Development</li>
-          <li>Responsive Web Design</li>
-          <li>Product Thinking</li>
-          <li>Conversion Strategy</li>
-          <li>Performance Optimization</li>
-          <li>Accessibility Foundations</li>
-          <li>Stakeholder Communication</li>
-          <li>Execution Planning</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="experience" class="section section-alt">
-      <div class="container">
-        <h2>Experience</h2>
-        <div class="timeline">
-          <article>
-            <h3>Independent Builder / Consultant</h3>
-            <p class="meta">Recent</p>
-            <p>Partnered with clients to build and improve digital experiences, focusing on speed, clarity, and business outcomes.</p>
-          </article>
-          <article>
-            <h3>Product & Web Delivery Roles</h3>
-            <p class="meta">Prior</p>
-            <p>Contributed across web projects that required cross-functional execution, iterative design refinement, and measurable results.</p>
-          </article>
+        <div class="section-head reveal">
+          <div><p class="kicker">Field notes</p><h2>Thinking in public, from active builds.</h2></div>
+          <p>This section is structured as a lightweight publishing surface for future essays, system notes, project updates, and partnership opportunities.</p>
+        </div>
+        <div class="filter-row" role="group" aria-label="Filter field notes">
+          <button class="filter active" data-filter="all">All</button><button class="filter" data-filter="governance">Governance</button><button class="filter" data-filter="agents">Agents</button><button class="filter" data-filter="operations">Operations</button>
+        </div>
+        <div class="notes-grid">
+          <article class="note-card reveal" data-category="governance"><span class="note-meta">Governance · 6 min</span><h3>Why agent systems need a control plane, not another prompt</h3><p>Reasoning quality cannot substitute for execution policy, decision traceability, and bounded authority.</p><a href="https://github.com/dburt-proex/CASA-Flagship" target="_blank" rel="noopener noreferrer">Read project context ↗</a></article>
+          <article class="note-card reveal" data-category="agents"><span class="note-meta">Agents · 5 min</span><h3>Collaboration graphs are only useful when joins are real</h3><p>Parallel agents become operational only when routing, aggregation, failure handling, and approvals execute end to end.</p><a href="#contact">Discuss the architecture ↗</a></article>
+          <article class="note-card reveal" data-category="operations"><span class="note-meta">Operations · 4 min</span><h3>Audit systems should route action, not just generate findings</h3><p>A useful assessment connects evidence to severity, recommendation, owner, dependency, and next decision.</p><a href="https://github.com/dburt-proex/operator-intelligence" target="_blank" rel="noopener noreferrer">Inspect the system ↗</a></article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <div class="container narrow">
-        <h2>Contact</h2>
-        <p>Open to collaboration, consulting, and full-time opportunities.</p>
-        <div class="contact-links">
-          <a class="btn btn-primary" href="https://github.com/dburt-proex/DDBPORTFOLIO.git.io/issues/new" target="_blank" rel="noopener noreferrer">Start a Conversation</a>
-          <a class="btn btn-secondary" href="https://github.com/dburt-proex" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a class="btn btn-secondary" href="https://github.com/dburt-proex?tab=repositories" target="_blank" rel="noopener noreferrer">Projects</a>
-        </div>
+    <section class="section partnership">
+      <div class="container partnership-card reveal">
+        <div><p class="kicker">Partnership surface</p><h2>Bring me the ambiguous system.</h2><p>I am most useful when the problem spans AI, operations, governance, workflow design, and product execution, and the current path is too vague to trust.</p></div>
+        <div class="partnership-list"><span>AI governance architecture</span><span>Agent workflow design</span><span>Operational audit systems</span><span>Control and scoring models</span><span>Prototype-to-product execution</span></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container contact-grid reveal">
+        <div><p class="kicker">Contact</p><h2>Let’s build something accountable.</h2><p>Open to high-impact roles, systems consulting, technical partnerships, and product collaborations.</p></div>
+        <div class="contact-actions"><a class="btn btn-primary" href="mailto:drewdburt@outlook.com">Email Drew ↗</a><a class="btn btn-secondary" href="https://github.com/dburt-proex" target="_blank" rel="noopener noreferrer">GitHub</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/drew-burt" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> DDB Portfolio. Built for clarity, speed, and conversion.</p>
-    </div>
-  </footer>
-
+  <footer class="site-footer"><div class="container footer-grid"><p>© <span id="year"></span> Drew Burt</p><p>Built as an operating portfolio, not a static résumé.</p><a href="#home">Back to top ↑</a></div></footer>
   <script src="script.js"></script>
 </body>
 </html>
