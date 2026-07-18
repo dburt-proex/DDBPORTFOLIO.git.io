@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Governance for Developer Tooling | Drew Burt</title>
+  <meta name="description" content="Evidence-backed capability brief for AI governance engineering, agent security, developer controls, deterministic routing, and audit-ready workflows.">
+  <meta property="og:title" content="AI Governance for Developer Tooling | Drew Burt">
+  <meta property="og:description" content="A maturity-aware evidence map connecting implemented controls, canonical repositories, and honest production boundaries.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07100d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Return to Drew Burt portfolio">
+        <span class="brand-mark">DB</span>
+        <span>Drew Burt</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation"><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="Brief navigation">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#proof">Proof</a>
+        <a href="#maturity">Maturity</a>
+        <a href="index.html#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="brief-hero">
+      <div class="container reveal">
+        <p class="eyebrow"><span class="status-dot"></span> Capability brief · Evidence snapshot July 18, 2026</p>
+        <h1>AI governance for developer tooling and agent execution.</h1>
+        <p>I design governed AI and developer workflows that turn ambiguous automation into controlled, inspectable execution. The core mechanisms are deterministic routing, evidence-capped scoring, explicit permissions, review gates, and durable audit records.</p>
+        <div class="brief-actions">
+          <a class="btn btn-primary" href="#proof">Inspect validated proof <span>↓</span></a>
+          <a class="btn btn-secondary" href="index.html">Return to portfolio</a>
+        </div>
+        <div class="proof-callout">
+          <strong>Boundary</strong>
+          <p>This brief consolidates evidence across independent repositories. It does not collapse those projects into one product, imply third-party endorsement, or claim enterprise production readiness beyond published validation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities" class="brief-section">
+      <div class="container">
+        <p class="kicker">Capability map</p>
+        <h2>Controls tied to canonical artifacts.</h2>
+        <p class="brief-lead">Each capability below resolves to an inspectable repository or validation artifact. The classification distinguishes working implementation from documented framework evidence.</p>
+        <div class="matrix-wrap">
+          <table class="signal-table">
+            <thead><tr><th>Capability</th><th>Canonical artifact</th><th>What the evidence supports</th></tr></thead>
+            <tbody>
+              <tr><td>Pull-request risk routing</td><td><a href="https://github.com/dburt-proex/diffwall" target="_blank" rel="noopener noreferrer">DiffWall ↗</a></td><td>Repository-local rules classify controlled changes into ALLOW, REVIEW, and HALT paths.</td></tr>
+              <tr><td>Evidence before enforcement</td><td><a href="https://github.com/dburt-proex/diffwall/blob/main/docs/live-validation-case-study.md" target="_blank" rel="noopener noreferrer">Live validation ↗</a></td><td>Reports, PR comments, and workflow artifacts were published before a destructive migration was blocked.</td></tr>
+              <tr><td>Deterministic signal scoring</td><td><a href="https://github.com/dburt-proex/VIL_deterministic_scoring_engine" target="_blank" rel="noopener noreferrer">VIL scoring engine ↗</a></td><td>A FastAPI service applies an evidence cap, routes signals across five outcomes, and records decisions in a JSONL audit ledger.</td></tr>
+              <tr><td>Governed assessment</td><td><a href="https://github.com/dburt-proex/operator-intelligence" target="_blank" rel="noopener noreferrer">Operator Intelligence ↗</a></td><td>Evidence is translated into confidence-aware findings, scored priorities, implementation packages, and a sequenced roadmap.</td></tr>
+              <tr><td>Instruction control</td><td><a href="https://github.com/dburt-proex/PromptBP" target="_blank" rel="noopener noreferrer">PromptBP ↗</a></td><td>Versioned schemas, capability contracts, workflow composition, scoring, bounded recursion, and traceable state objects are documented.</td></tr>
+              <tr><td>Runtime governance architecture</td><td><a href="https://github.com/dburt-proex/CASA-Flagship" target="_blank" rel="noopener noreferrer">CASA milestone ↗</a></td><td>The architecture defines execution gates, risk and confidence handling, decision evidence, drift monitoring, and replay patterns.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="brief-section section-dark">
+      <div class="container">
+        <p class="kicker">Governed lifecycle</p>
+        <h2>From intent to accountable action.</h2>
+        <div class="lifecycle">
+          <article class="lifecycle-step"><span>01 / INTAKE</span><strong>Collect context</strong><p>Normalize the request, source quality, uncertainty, and operating constraints.</p></article>
+          <article class="lifecycle-step"><span>02 / SCORE</span><strong>Evaluate evidence</strong><p>Measure value, verifiability, risk, and confidence before action.</p></article>
+          <article class="lifecycle-step"><span>03 / GATE</span><strong>Route explicitly</strong><p>Continue, clarify, require review, archive, or halt under defined policy.</p></article>
+          <article class="lifecycle-step"><span>04 / EXECUTE</span><strong>Constrain authority</strong><p>Limit tools, permissions, external effects, and irreversible behavior.</p></article>
+          <article class="lifecycle-step"><span>05 / RECORD</span><strong>Preserve proof</strong><p>Store the decision, evidence, result, exceptions, and rollback path.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof" class="brief-section">
+      <div class="container">
+        <p class="kicker">Validated implementation proof</p>
+        <h2>Controlled REVIEW and HALT paths.</h2>
+        <p class="brief-lead">DiffWall was exercised through real GitHub pull-request workflows against a governance-sensitive change and a deliberately destructive SQL migration.</p>
+        <div class="evidence-grid">
+          <article class="evidence-card reveal"><span class="evidence-index">REVIEW / 48</span><h3>Governance-sensitive change</h3><p>A workflow and action-hardening change triggered protected-path, GitHub Actions, and diff-size signals, correctly requiring human judgment without forcing a destructive halt.</p><a href="https://github.com/dburt-proex/diffwall/blob/main/docs/live-validation-case-study.md#test-1--review-path" target="_blank" rel="noopener noreferrer">Inspect REVIEW evidence ↗</a></article>
+          <article class="evidence-card reveal"><span class="evidence-index">HALT / 100</span><h3>Destructive migration</h3><p>A controlled migration containing a production table drop was detected, scored at maximum severity, reported, and blocked after evidence publication.</p><a href="https://github.com/dburt-proex/diffwall/blob/main/docs/live-validation-case-study.md#test-2--halt-path" target="_blank" rel="noopener noreferrer">Inspect HALT evidence ↗</a></article>
+          <article class="evidence-card reveal"><span class="evidence-index">EVIDENCE / FIRST</span><h3>Proof survived enforcement</h3><p>The workflow created its marked PR comment and uploaded evidence artifacts before the HALT path failed the job, separating enforcement from evidence loss.</p><a href="https://github.com/dburt-proex/diffwall/blob/main/docs/live-validation-case-study.md#what-this-proves" target="_blank" rel="noopener noreferrer">Inspect proof boundaries ↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="maturity" class="brief-section section-dark">
+      <div class="container">
+        <p class="kicker">Maturity map</p>
+        <h2>Implemented, documented, and bounded honestly.</h2>
+        <div class="maturity-grid">
+          <article class="maturity-card"><span class="status">Validated early implementation</span><h3>DiffWall</h3><p>Working PR and agent-action enforcement with live REVIEW and HALT proof. It should not be described as a fully hardened enterprise DevSecOps product.</p></article>
+          <article class="maturity-card"><span class="status">Documented runnable implementation</span><h3>Verified Intelligence Layer</h3><p>FastAPI, browser dashboard, Docker startup, audit persistence, metrics, and pytest instructions are documented. Authentication and tenant hardening remain future work.</p></article>
+          <article class="maturity-card"><span class="status">Framework foundation</span><h3>Operator Intelligence</h3><p>A governed consulting methodology with scoring, findings, standards, templates, playbooks, and implementation routing. It is not represented as a production runtime.</p></article>
+          <article class="maturity-card"><span class="status">Execution architecture</span><h3>PromptBP</h3><p>Schemas, capabilities, workflow composition, evaluation fixtures, bounded recursion, and operations guidance are documented without overstating deployment maturity.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="brief-section">
+      <div class="container">
+        <p class="kicker">Role alignment</p>
+        <h2>Where this evidence is most relevant.</h2>
+        <div class="role-grid">
+          <article class="role-card"><h3>AI governance engineering</h3><p>Translate governance requirements into technical controls, evidence, and operating workflows.</p></article>
+          <article class="role-card"><h3>Agent security</h3><p>Design authorization boundaries, approval states, safe failure, and action-level enforcement.</p></article>
+          <article class="role-card"><h3>Developer tooling</h3><p>Embed deterministic review and policy gates into Git and CI workflows.</p></article>
+          <article class="role-card"><h3>Solutions architecture</h3><p>Convert ambiguous business and risk requirements into inspectable system designs and artifacts.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="brief-section section-dark">
+      <div class="container">
+        <p class="kicker">Evidence rules</p>
+        <h2>What this brief does not claim.</h2>
+        <p class="boundary-note">Validated implementation means inspectable code and a documented validation path. It does not automatically mean enterprise readiness, independent security certification, broad compatibility, production deployment, or third-party adoption.</p>
+        <div class="source-list">
+          <a href="https://github.com/dburt-proex/diffwall" target="_blank" rel="noopener noreferrer">DiffWall</a>
+          <a href="https://github.com/dburt-proex/VIL_deterministic_scoring_engine" target="_blank" rel="noopener noreferrer">VIL</a>
+          <a href="https://github.com/dburt-proex/operator-intelligence" target="_blank" rel="noopener noreferrer">Operator Intelligence</a>
+          <a href="https://github.com/dburt-proex/PromptBP" target="_blank" rel="noopener noreferrer">PromptBP</a>
+          <a href="https://github.com/dburt-proex/CASA-Flagship" target="_blank" rel="noopener noreferrer">CASA milestone</a>
+          <a href="index.html#contact">Contact Drew</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><p>© <span id="year"></span> Drew Burt</p><p>Evidence snapshot · July 18, 2026</p><a href="index.html">Portfolio ↑</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
