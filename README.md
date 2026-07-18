@@ -1,79 +1,68 @@
-# DDB Portfolio
+# Drew Burt Portfolio
 
-## Overview
+A focused portfolio for AI governance engineering, developer controls, deterministic scoring systems, agent workflows, and audit-ready execution infrastructure.
 
-DDB Portfolio is the foundation for my personal portfolio website. This repository houses the code, content, and design system for a fast, modern, and conversion-focused site.
+## Positioning
 
-## Purpose
+I build governed AI systems that can explain why an action was allowed, reviewed, clarified, archived, or halted before execution proceeds.
 
-The site will serve as a central hub for:
-- showcasing projects
-- presenting skills and capabilities
-- publishing professional background and story
-- creating opportunities for freelance, consulting, collaboration, and hiring
-- providing clear paths for contact and next steps
+The portfolio is organized around inspectable evidence rather than broad capability claims. Each featured system links to its canonical repository, validation artifact, or maturity boundary.
 
-## Planned Sections
+## Featured systems
 
-### 1. Hero
-A concise introduction with name, positioning, and a clear call to action.
+- [DiffWall](https://github.com/dburt-proex/diffwall) — deterministic PR and agent-action enforcement with live `REVIEW` and `HALT` validation.
+- [Verified Intelligence Layer](https://github.com/dburt-proex/VIL_deterministic_scoring_engine) — evidence-capped signal scoring, five deterministic routes, dashboard, API, and audit ledger.
+- [Operator Intelligence](https://github.com/dburt-proex/operator-intelligence) — governed assessment methodology connecting evidence, confidence, scoring, findings, and implementation paths.
+- [PromptBP](https://github.com/dburt-proex/PromptBP) — capability-based instruction and workflow architecture with schemas, scoring, bounded recursion, and evaluation fixtures.
+- [CASA milestone](https://github.com/dburt-proex/CASA-Flagship) — runtime governance architecture for policy gates, decision evidence, drift monitoring, and replay.
 
-### 2. About
-A short narrative covering background, strengths, and the type of problems I solve.
+## Evidence brief
 
-### 3. Projects
-Featured work with summaries, outcomes, stack details, and links.
+The repository includes a recruiter- and buyer-facing capability brief:
 
-### 4. Skills
-Core technical, operational, and strategic capabilities.
+- [`governance-developer-tooling.html`](governance-developer-tooling.html) — rendered portfolio experience.
+- [`docs/ai-governance-developer-tooling.md`](docs/ai-governance-developer-tooling.md) — source document and maturity appendix.
 
-### 5. Experience
-Relevant roles, work history, and notable contributions.
+The brief preserves repository independence and distinguishes validated implementation, documented runnable systems, framework evidence, active review work, and future hardening.
 
-### 6. Contact
-Simple ways to reach out, collaborate, or request work.
+## Portfolio structure
 
-## Portfolio Build Goals
+```text
+.
+├── index.html                              # Primary portfolio
+├── governance-developer-tooling.html       # Evidence-backed capability brief
+├── styles.css                              # Responsive visual system
+├── script.js                               # Navigation, reveal, and filtering behavior
+└── docs/
+    └── ai-governance-developer-tooling.md  # Source evidence brief
+```
 
-- clean and modern visual identity
-- mobile-first responsive layout
-- fast load times
-- strong readability and simple navigation
-- scalable structure for future case studies and writing
-- easy deployment through GitHub Pages or similar hosting
+## Technical approach
 
-## Initial Build Plan
+- Static HTML, CSS, and JavaScript
+- GitHub Pages-compatible deployment
+- Responsive layout and reduced-motion support
+- Semantic navigation and structured profile metadata
+- Direct links to canonical proof instead of unsupported outcome claims
 
-1. Define brand direction and tone.
-2. Choose stack and site structure.
-3. Build landing page and navigation.
-4. Add projects and supporting content.
-5. Optimize for performance, clarity, and conversions.
-6. Deploy and iterate.
+## Professional lanes
 
-## Suggested Tech Direction
+This portfolio is optimized for:
 
-A practical first version could use:
-- HTML, CSS, and JavaScript for simplicity
-- or a lightweight framework such as Next.js if expansion is expected
-- GitHub Pages or Vercel for deployment
+- AI governance engineering
+- agent security and authorization
+- developer tooling and AI code governance
+- governance automation
+- workflow and solutions architecture
+- deterministic scoring and decision systems
+- audit trails and evidence infrastructure
 
-## Repository Roadmap
+## Contact
 
-### Phase 1
-- establish project structure
-- create homepage
-- add branding and content sections
+- Email: [drewburt4@gmail.com](mailto:drewburt4@gmail.com)
+- LinkedIn: [burtdrew0047](https://www.linkedin.com/in/burtdrew0047)
+- GitHub: [dburt-proex](https://github.com/dburt-proex)
 
-### Phase 2
-- add polished project cards and case studies
-- add contact form or outbound contact links
-- improve SEO and social metadata
+## Evidence boundary
 
-### Phase 3
-- add blog, experiments, or writing archive
-- expand portfolio with testimonials, metrics, and outcomes
-
-## Working Notes
-
-This README is the starting point for a portfolio build. The next step is to turn this repository into a functioning portfolio website with a clear brand, strong positioning, and deployable front-end structure.
+Repository documentation and linked validation artifacts are the source of truth. No project should be interpreted as enterprise production-ready, independently certified, broadly deployed, or endorsed by a third party unless separate evidence explicitly establishes that claim.
