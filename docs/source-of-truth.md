@@ -96,4 +96,4 @@ Existing technical briefs and case studies remain available as supporting docume
 
 | Date | Change | GitHub record | Public deployment |
 | --- | --- | --- | --- |
-| 2026-07-19 | Established Sites as public authority and GitHub as versioned documentation authority. | Portfolio source-of-truth pull request | Pending synchronized Sites checkpoint |
+| 2026-07-19 | Established Sites as public authority and GitHub as versioned documentation authority. | [PR #9](https://github.com/dburt-proex/DDBPORTFOLIO.git.io/pull/9) | [Sites version 10](https://drew-burt-portfolio.dburt30.chatgpt.site) |
