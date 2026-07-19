@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic SDLC Governance Case Study | Drew Burt</title>
+  <meta name="description" content="Evidence-backed case study showing how DiffWall routes AI-generated software changes through deterministic REVIEW and HALT controls while preserving audit evidence.">
+  <meta property="og:title" content="Agentic SDLC Governance Case Study | Drew Burt">
+  <meta property="og:description" content="A bounded developer-governance case study connecting AI-generated change risk, deterministic routing, human review, and evidence-before-enforcement.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07100d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Return to Drew Burt portfolio">
+        <span class="brand-mark">DB</span>
+        <span>Drew Burt</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation"><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="Case study navigation">
+        <a href="#problem">Problem</a>
+        <a href="#control-model">Control model</a>
+        <a href="#evidence">Evidence</a>
+        <a href="index.html#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="brief-hero">
+      <div class="container reveal">
+        <p class="eyebrow"><span class="status-dot"></span> Case study · Evidence snapshot July 19, 2026</p>
+        <h1>Governance for AI-generated software changes.</h1>
+        <p>AI coding systems increase change velocity, but generated code still crosses authorization, review, security, and release boundaries. This case study shows how DiffWall turns those boundaries into deterministic routing, human-review states, and durable evidence before enforcement.</p>
+        <div class="brief-actions">
+          <a class="btn btn-primary" href="#evidence">Inspect validation proof <span>↓</span></a>
+          <a class="btn btn-secondary" href="https://github.com/dburt-proex/diffwall" target="_blank" rel="noopener noreferrer">Open DiffWall repository ↗</a>
+        </div>
+        <div class="proof-callout">
+          <strong>Scope boundary</strong>
+          <p>This page documents repository-backed early implementation evidence. It does not claim enterprise production readiness, broad adoption, independent certification, or compatibility with every AI coding platform.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="brief-section">
+      <div class="container">
+        <p class="kicker">Control failure</p>
+        <h2>Generation can outpace review and authorization.</h2>
+        <p class="brief-lead">The central risk is not that an AI system can propose code. The risk is that a proposed change can cross a sensitive boundary without enough evidence, the right reviewer, or a reliable stop condition.</p>
+        <div class="role-grid">
+          <article class="role-card"><h3>Protected paths</h3><p>Authentication, permissions, workflows, migrations, infrastructure, and dependency surfaces require explicit review policies.</p></article>
+          <article class="role-card"><h3>Destructive operations</h3><p>Database drops, unsafe execution, secret exposure, and high-impact infrastructure changes require fail-safe routing.</p></article>
+          <article class="role-card"><h3>Reviewer ownership</h3><p>A finding is incomplete when it identifies risk but cannot identify the responsible human review path.</p></article>
+          <article class="role-card"><h3>Evidence loss</h3><p>A blocked job should not erase the report, PR comment, or artifact needed to understand and replay the decision.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="control-model" class="brief-section section-dark">
+      <div class="container">
+        <p class="kicker">Control model</p>
+        <h2>Classify, route, preserve, then enforce.</h2>
+        <div class="lifecycle">
+          <article class="lifecycle-step"><span>01 / INSPECT</span><strong>Read the proposed change</strong><p>Parse the diff and identify changed files, protected surfaces, dependency changes, and risky operations.</p></article>
+          <article class="lifecycle-step"><span>02 / SCORE</span><strong>Apply repository policy</strong><p>Use deterministic rules and configured thresholds rather than relying on model confidence alone.</p></article>
+          <article class="lifecycle-step"><span>03 / ROUTE</span><strong>Choose ALLOW, REVIEW, or HALT</strong><p>Separate ordinary change flow, human judgment, and destructive-stop conditions.</p></article>
+          <article class="lifecycle-step"><span>04 / ASSIGN</span><strong>Surface responsible reviewers</strong><p>Map triggered files to CODEOWNERS when repository ownership data exists.</p></article>
+          <article class="lifecycle-step"><span>05 / RECORD</span><strong>Preserve proof before failure</strong><p>Publish the report, PR comment, step summary, or workflow artifact before a HALT verdict fails the job.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence" class="brief-section">
+      <div class="container">
+        <p class="kicker">Validated paths</p>
+        <h2>REVIEW and HALT were exercised through real pull-request workflows.</h2>
+        <p class="brief-lead">The published DiffWall validation case study records a governance-sensitive change and a deliberately destructive migration. The examples establish routing and evidence behavior without implying broad production deployment.</p>
+        <div class="evidence-grid">
+          <article class="evidence-card reveal">
+            <span class="evidence-index">REVIEW / 48</span>
+            <h3>Governance-sensitive workflow change</h3>
+            <p>Protected-path, GitHub Actions, and diff-size signals produced a REVIEW verdict, requiring human judgment without forcing a destructive stop.</p>
+            <a href="https://github.com/dburt-proex/diffwall/blob/main/docs/live-validation-case-study.md#test-1--review-path" target="_blank" rel="noopener noreferrer">Inspect REVIEW evidence ↗</a>
+          </article>
+          <article class="evidence-card reveal">
+            <span class="evidence-index">HALT / 100</span>
+            <h3>Destructive database migration</h3>
+            <p>A controlled migration containing a production table drop was detected, scored at maximum severity, reported, and blocked.</p>
+            <a href="https://github.com/dburt-proex/diffwall/blob/main/docs/live-validation-case-study.md#test-2--halt-path" target="_blank" rel="noopener noreferrer">Inspect HALT evidence ↗</a>
+          </article>
+          <article class="evidence-card reveal">
+            <span class="evidence-index">EVIDENCE / FIRST</span>
+            <h3>Proof survived enforcement</h3>
+            <p>The workflow created its marked PR comment and uploaded evidence artifacts before the HALT path failed the job.</p>
+            <a href="https://github.com/dburt-proex/diffwall/blob/main/docs/live-validation-case-study.md#what-this-proves" target="_blank" rel="noopener noreferrer">Inspect evidence boundary ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="brief-section section-dark">
+      <div class="container">
+        <p class="kicker">Current implementation signal</p>
+        <h2>Controls supported by the current repository state.</h2>
+        <div class="matrix-wrap">
+          <table class="signal-table">
+            <thead><tr><th>Control</th><th>Repository evidence</th><th>Maturity boundary</th></tr></thead>
+            <tbody>
+              <tr><td>Deterministic PR routing</td><td>Repository-local rules and configurable ALLOW, REVIEW, and HALT thresholds.</td><td>Validated early implementation, not a universal policy engine.</td></tr>
+              <tr><td>Fail-safe parsing and input handling</td><td>Regression hardening for malformed, header-less, and zero-file diff conditions.</td><td>Repository tests support specific covered cases.</td></tr>
+              <tr><td>Evidence publication</td><td>Marked PR comments, step-summary fallback, reports, and workflow artifacts.</td><td>Depends on workflow configuration and token availability.</td></tr>
+              <tr><td>CODEOWNERS-aware review routing</td><td>Triggered files can resolve to suggested reviewers from repository ownership rules.</td><td>Requires a valid CODEOWNERS file.</td></tr>
+              <tr><td>CI integration surfaces</td><td>GitHub Actions and documented GitLab merge-request usage.</td><td>Does not establish broad platform certification.</td></tr>
+              <tr><td>Security reporting</td><td>SARIF output supports code-scanning-oriented consumption.</td><td>Line-level locations are not fabricated when unavailable.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="brief-section">
+      <div class="container">
+        <p class="kicker">Professional relevance</p>
+        <h2>What this case study demonstrates.</h2>
+        <div class="maturity-grid">
+          <article class="maturity-card"><span class="status">AI governance engineering</span><h3>Policy becomes executable</h3><p>Governance requirements are translated into repository rules, thresholds, review states, evidence, and rollback-aware operation.</p></article>
+          <article class="maturity-card"><span class="status">Developer tooling</span><h3>Controls live in the delivery path</h3><p>The mechanism operates where code changes are proposed and reviewed rather than remaining a detached policy document.</p></article>
+          <article class="maturity-card"><span class="status">Agent security</span><h3>Authority is bounded before action</h3><p>AI-generated work is treated as a proposal that must satisfy explicit change-control conditions.</p></article>
+          <article class="maturity-card"><span class="status">Solutions architecture</span><h3>Evidence connects architecture to operation</h3><p>The design joins policy, CI workflow behavior, reviewer routing, reports, and maturity limits into one inspectable operating pattern.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="brief-section section-dark">
+      <div class="container">
+        <p class="kicker">Source of truth</p>
+        <h2>Inspect the underlying evidence.</h2>
+        <p class="boundary-note">DiffWall remains an independent repository and system. This portfolio case study summarizes its published evidence; it does not absorb DiffWall into the portfolio or into any other governance project.</p>
+        <div class="source-list">
+          <a href="https://github.com/dburt-proex/diffwall" target="_blank" rel="noopener noreferrer">DiffWall repository</a>
+          <a href="https://github.com/dburt-proex/diffwall/blob/main/docs/live-validation-case-study.md" target="_blank" rel="noopener noreferrer">Live validation case study</a>
+          <a href="https://github.com/dburt-proex/diffwall/blob/main/STATUS.md" target="_blank" rel="noopener noreferrer">Implementation status</a>
+          <a href="governance-developer-tooling.html">Broader capability brief</a>
+          <a href="index.html">Portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><p>© <span id="year"></span> Drew Burt</p><p>Evidence snapshot · July 19, 2026</p><a href="index.html">Portfolio ↑</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
