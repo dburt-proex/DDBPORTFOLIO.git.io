@@ -1,222 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drew Burt | AI Governance Engineering & Developer Controls</title>
-  <meta name="description" content="Drew Burt designs governed AI systems, developer controls, deterministic scoring engines, agent workflows, and audit-ready execution infrastructure.">
-  <meta property="og:title" content="Drew Burt | Governed AI Systems Engineer">
-  <meta property="og:description" content="AI governance engineering, agent security, developer tooling, scoring systems, and auditable workflow infrastructure backed by inspectable proof.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#07100d">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Drew Burt",
-    "jobTitle": "AI Systems Engineer and Governance Architect",
-    "description": "Builder of governed AI systems, developer controls, deterministic scoring engines, agent workflows, and audit-ready execution infrastructure.",
-    "email": "mailto:drewburt4@gmail.com",
-    "sameAs": [
-      "https://github.com/dburt-proex",
-      "https://www.linkedin.com/in/burtdrew0047"
-    ],
-    "knowsAbout": [
-      "AI governance engineering",
-      "agent security",
-      "developer tooling",
-      "policy as code",
-      "workflow automation",
-      "audit trails",
-      "deterministic scoring"
-    ]
-  }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drew Burt | Governed AI Systems</title>
+  <meta name="description" content="Drew Burt builds governance architecture, execution gates, and evidence trails for organizations putting AI into real work.">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#070a0e">
+  <link rel="canonical" href="https://drew-burt-portfolio.dburt30.chatgpt.site/">
+  <meta http-equiv="refresh" content="0; url=https://drew-burt-portfolio.dburt30.chatgpt.site/">
+  <script>
+    window.location.replace("https://drew-burt-portfolio.dburt30.chatgpt.site/");
   </script>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; margin: 0; display: grid; place-items: center; color: #edf2f8; background: #070a0e; }
+    main { width: min(680px, calc(100% - 40px)); padding: 34px; border: 1px solid rgba(183,203,226,.2); border-radius: 20px; background: rgba(18,25,35,.82); }
+    p { color: #aeb9c7; line-height: 1.65; }
+    a { color: #8fc1ff; }
+    .links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
+  </style>
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="Drew Burt home">
-        <span class="brand-mark">DB</span>
-        <span>Drew Burt</span>
-      </a>
-      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation"><span></span><span></span></button>
-      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <a href="#work">Systems</a>
-        <a href="#evidence">Evidence</a>
-        <a href="#system">Method</a>
-        <a href="#contact" class="nav-cta">Start a conversation</a>
-      </nav>
+  <main>
+    <h1>Drew Burt's public portfolio has moved.</h1>
+    <p>The current public experience now lives on ChatGPT Sites. This GitHub repository remains the versioned documentation and evidence layer.</p>
+    <div class="links">
+      <a href="https://drew-burt-portfolio.dburt30.chatgpt.site/">Open the public portfolio</a>
+      <a href="docs/source-of-truth.md">Read the source-of-truth record</a>
+      <a href="governance-developer-tooling.html">Inspect the technical brief</a>
     </div>
-  </header>
-
-  <main id="home">
-    <section class="hero section">
-      <div class="container hero-grid">
-        <div class="hero-copy-wrap reveal">
-          <p class="eyebrow"><span class="status-dot"></span> AI Systems Engineer · Governance Engineering · Developer Controls</p>
-          <h1>I build AI systems that can be <em>trusted before they act.</em></h1>
-          <p class="hero-copy">I design deterministic control layers for agents, software changes, and high-stakes workflows. The work combines policy gates, scoring logic, bounded permissions, human review, and audit evidence into systems that can be inspected and operated.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="governance-developer-tooling.html">Inspect the evidence <span>↗</span></a>
-            <a class="btn btn-secondary" href="#work">Explore the systems</a>
-          </div>
-          <div class="signal-strip" aria-label="Core capabilities">
-            <span>Agent authorization</span><span>Developer governance</span><span>Policy-as-code</span><span>Audit evidence</span><span>Deterministic routing</span>
-          </div>
-        </div>
-
-        <aside class="control-panel reveal" aria-label="Professional profile">
-          <div class="panel-head"><span>SYSTEM / PROFILE</span><span class="live">ACTIVE</span></div>
-          <div class="panel-grid">
-            <div><span class="label">Role lane</span><strong>AI governance engineering</strong></div>
-            <div><span class="label">Specialty</span><strong>Execution controls</strong></div>
-            <div><span class="label">Proof surface</span><strong>Code + evidence</strong></div>
-            <div><span class="label">Working mode</span><strong>Architecture to artifact</strong></div>
-          </div>
-          <div class="terminal-line"><span>&gt;</span> intent → evidence → gate → action → ledger</div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="proof-bar" aria-label="Verified portfolio signals">
-      <div class="container proof-grid">
-        <div><strong>2</strong><span>live DiffWall enforcement paths validated: REVIEW and HALT</span></div>
-        <div><strong>5</strong><span>deterministic VIL routes from PASS through HALT</span></div>
-        <div><strong>6</strong><span>independent governance and operator-system artifacts</span></div>
-        <div><strong>1</strong><span>operating rule: evidence must outrank confidence</span></div>
-      </div>
-    </section>
-
-    <section id="work" class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><p class="kicker">Selected systems</p><h2>Governance expressed as working infrastructure.</h2></div>
-          <p>Each system addresses a specific control failure: unsafe code changes, weak signal triage, untraceable recommendations, instruction drift, or unconstrained agent execution.</p>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card flagship reveal">
-            <div class="card-top"><span class="index">01</span><span class="badge">Validated developer control</span></div>
-            <h3>DiffWall</h3>
-            <p>A deterministic PR and agent-action firewall for AI-generated changes. DiffWall applies repository-local rules, routes proposed work through ALLOW, REVIEW, or HALT, and preserves evidence before enforcement.</p>
-            <ul class="feature-list"><li>Live REVIEW route proven at 48 / 100</li><li>Live HALT route proven at 100 / 100</li><li>PR comments and evidence artifacts published before blocking</li><li>TypeScript PR scanner and Python action validator</li></ul>
-            <div class="card-foot"><span>TypeScript · Python · GitHub Actions</span><span><a href="https://github.com/dburt-proex/diffwall/blob/main/docs/live-validation-case-study.md" target="_blank" rel="noopener noreferrer">Live proof ↗</a> · <a href="https://github.com/dburt-proex/diffwall" target="_blank" rel="noopener noreferrer">Repository ↗</a></span></div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="card-top"><span class="index">02</span><span class="badge">Deterministic signal routing</span></div>
-            <h3>Verified Intelligence Layer</h3>
-            <p>A FastAPI scoring system that converts messy operational signals into structured decisions. Its central invariant prevents a signal from scoring higher than the quality of its evidence.</p>
-            <ul class="feature-list"><li>PASS / REVIEW / CLARIFY / ARCHIVE / HALT</li><li>Persistent JSONL audit ledger</li><li>Browser dashboard and metrics endpoints</li></ul>
-            <div class="card-foot"><span>Python · FastAPI · Docker · pytest</span><a href="https://github.com/dburt-proex/VIL_deterministic_scoring_engine" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="card-top"><span class="index">03</span><span class="badge">Governed assessment system</span></div>
-            <h3>Operator Intelligence</h3>
-            <p>A repeatable business growth systems assessment that converts evidence into governed findings, confidence-aware scoring, implementation packages, and a sequenced roadmap.</p>
-            <ul class="feature-list"><li>Evidence-backed recommendation routing</li><li>Operator Score and readiness indexes</li><li>Traceable implementation paths</li></ul>
-            <div class="card-foot"><span>Scoring · Findings · Standards · Playbooks</span><a href="https://github.com/dburt-proex/operator-intelligence" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="card-top"><span class="index">04</span><span class="badge">Instruction control architecture</span></div>
-            <h3>PromptBP</h3>
-            <p>A capability-based execution architecture for routing intent, composing workflows, scoring outputs, and improving weak sections through bounded recursion instead of uncontrolled retries.</p>
-            <ul class="feature-list"><li>Versioned schemas and capability contracts</li><li>Workflow composer and scoring engine</li><li>Regression fixtures and traceable state objects</li></ul>
-            <div class="card-foot"><span>Schemas · Capabilities · Evaluation · Operations</span><a href="https://github.com/dburt-proex/PromptBP" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="card-top"><span class="index">05</span><span class="badge">Runtime governance architecture</span></div>
-            <h3>CASA</h3>
-            <p>A deterministic control-plane architecture positioned between agent reasoning and execution. It defines policy routes, human-review boundaries, decision evidence, drift monitoring, and replay.</p>
-            <ul class="feature-list"><li>ALLOW / REVIEW / HALT gates</li><li>Decision-ledger architecture</li><li>Risk, confidence, and boundary telemetry</li></ul>
-            <div class="card-foot"><span>Python · FastAPI · Pydantic · React</span><a href="https://github.com/dburt-proex/CASA-Flagship" target="_blank" rel="noopener noreferrer">Inspect milestone repository ↗</a></div>
-          </article>
-
-          <article class="project-card artifact-card reveal">
-            <div class="card-top"><span class="index">06</span><span class="badge">Evidence artifact</span></div>
-            <h3>AI Governance for Developer Tooling</h3>
-            <p>A recruiter- and buyer-facing evidence map connecting implemented controls, maturity boundaries, and canonical repositories without collapsing the underlying systems into one product.</p>
-            <ul class="feature-list"><li>Capability-to-artifact matrix</li><li>Implementation maturity classifications</li><li>Explicit production-readiness boundaries</li></ul>
-            <div class="card-foot"><span>Evidence · Architecture · Role alignment</span><a href="governance-developer-tooling.html">Read the brief ↗</a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="evidence" class="section section-dark">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><p class="kicker">Evidence layer</p><h2>Claims should resolve to inspectable proof.</h2></div>
-          <p>The portfolio separates validated implementation, documented architecture, active review work, and roadmap intent so the signal remains useful without overstating maturity.</p>
-        </div>
-        <div class="evidence-grid">
-          <article class="evidence-card reveal"><span class="evidence-index">PROOF / 01</span><h3>Controlled enforcement</h3><p>DiffWall published reports, comments, and workflow artifacts before a destructive migration was blocked.</p><a href="https://github.com/dburt-proex/diffwall/blob/main/docs/live-validation-case-study.md" target="_blank" rel="noopener noreferrer">Inspect live validation ↗</a></article>
-          <article class="evidence-card reveal"><span class="evidence-index">PROOF / 02</span><h3>Evidence-capped scoring</h3><p>VIL encodes the rule that a signal cannot outrank its verifiability, then records the resulting route in an audit ledger.</p><a href="https://github.com/dburt-proex/VIL_deterministic_scoring_engine" target="_blank" rel="noopener noreferrer">Inspect the scoring engine ↗</a></article>
-          <article class="evidence-card reveal"><span class="evidence-index">PROOF / 03</span><h3>Maturity-aware capability map</h3><p>The developer-tooling brief distinguishes runnable implementation from framework evidence, active review, and future hardening.</p><a href="governance-developer-tooling.html">Open capability brief ↗</a></article>
-          <article class="evidence-card reveal"><span class="evidence-index">PROOF / 04</span><h3>Agentic SDLC governance</h3><p>A focused case study shows how AI-generated software changes are classified, reviewed, halted, and recorded before release.</p><a href="agentic-sdlc-governance.html">Read the case study ↗</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="system" class="section">
-      <div class="container system-grid">
-        <div class="section-head stacked reveal">
-          <p class="kicker">Operating method</p>
-          <h2>Architecture that survives contact with execution.</h2>
-          <p>I define the decision model behind a system: what evidence is required, what authority exists, when humans intervene, how failure is contained, and what record remains afterward.</p>
-        </div>
-        <div class="method-stack">
-          <article class="method reveal"><span>01</span><div><h3>Frame the decision</h3><p>Define the objective, actors, constraints, failure cost, and evidence threshold before choosing tools.</p></div></article>
-          <article class="method reveal"><span>02</span><div><h3>Design the control boundary</h3><p>Specify interfaces, permissions, policy gates, scoring logic, review paths, and state transitions.</p></div></article>
-          <article class="method reveal"><span>03</span><div><h3>Instrument the evidence</h3><p>Capture confidence, unknowns, decisions, exceptions, drift, and rollback information.</p></div></article>
-          <article class="method reveal"><span>04</span><div><h3>Ship the operating artifact</h3><p>Deliver code, schemas, tests, ledgers, SOPs, or evaluation fixtures that make the control model usable.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="writing" class="section section-dark">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><p class="kicker">Technical positions</p><h2>The ideas behind the systems.</h2></div>
-          <p>Short arguments drawn from active builds, focused on governance, agents, developer controls, evidence, and operational accountability.</p>
-        </div>
-        <div class="filter-row" role="group" aria-label="Filter technical positions">
-          <button class="filter active" data-filter="all">All</button><button class="filter" data-filter="governance">Governance</button><button class="filter" data-filter="agents">Agents</button><button class="filter" data-filter="operations">Operations</button>
-        </div>
-        <div class="notes-grid">
-          <article class="note-card reveal" data-category="governance"><span class="note-meta">Governance · Evidence map</span><h3>AI governance belongs inside the developer workflow</h3><p>Policy becomes operational when it can classify, route, block, and preserve proof at the point of change.</p><a href="governance-developer-tooling.html">Read the capability brief ↗</a></article>
-          <article class="note-card reveal" data-category="agents"><span class="note-meta">Agents · Control architecture</span><h3>Reasoning quality cannot replace bounded authority</h3><p>Agent systems require explicit tool permissions, execution gates, review states, and durable evidence.</p><a href="https://github.com/dburt-proex/PromptBP" target="_blank" rel="noopener noreferrer">Inspect instruction controls ↗</a></article>
-          <article class="note-card reveal" data-category="operations"><span class="note-meta">Operations · Decision systems</span><h3>Assessments should route action, not merely produce findings</h3><p>A useful assessment connects evidence to confidence, business impact, priority, implementation path, and review.</p><a href="https://github.com/dburt-proex/operator-intelligence" target="_blank" rel="noopener noreferrer">Inspect the methodology ↗</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section partnership">
-      <div class="container partnership-card reveal">
-        <div><p class="kicker">Where I add leverage</p><h2>Bring me the workflow that moves faster than its controls.</h2><p>I am most useful where AI, software delivery, operations, and governance intersect, especially when the current process cannot explain why an action was allowed, reviewed, or stopped.</p></div>
-        <div class="partnership-list"><span>AI governance engineering</span><span>Agent authorization</span><span>Developer-tool controls</span><span>Governance automation</span><span>Scoring and routing systems</span><span>Audit-ready workflows</span></div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact-section">
-      <div class="container contact-grid reveal">
-        <div><p class="kicker">Contact</p><h2>Let’s build something accountable.</h2><p>Open to AI governance engineering, developer tooling, solutions architecture, workflow automation, and systems consulting opportunities.</p></div>
-        <div class="contact-actions"><a class="btn btn-primary" href="mailto:drewburt4@gmail.com">Email Drew ↗</a><a class="btn btn-secondary" href="https://github.com/dburt-proex" target="_blank" rel="noopener noreferrer">GitHub</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/burtdrew0047" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
-      </div>
-    </section>
   </main>
-
-  <footer class="site-footer"><div class="container footer-grid"><p>© <span id="year"></span> Drew Burt</p><p>Governed AI systems · developer controls · auditable execution</p><a href="#home">Back to top ↑</a></div></footer>
-  <script src="script.js"></script>
 </body>
 </html>
