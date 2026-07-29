@@ -37,6 +37,7 @@ Read the complete governance record: [docs/source-of-truth.md](docs/source-of-tr
 - [AI Governance for Developer Tooling](docs/ai-governance-developer-tooling.md) — source brief and maturity appendix.
 - [Rendered capability brief](governance-developer-tooling.html) — browser-readable evidence map.
 - [Agentic SDLC governance case study](agentic-sdlc-governance.html) — developer-control evidence.
+- [DiffWall v0.2.0 release evidence case study](diffwall-v0.2.0-release.html) — governed release, validation, maturity, and residual-risk evidence.
 
 ## Publishing rule
 
