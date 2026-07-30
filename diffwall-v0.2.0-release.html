@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DiffWall v0.2.0 Release Evidence | Drew Burt</title>
+  <meta name="description" content="Evidence-backed release case study for DiffWall v0.2.0, covering deterministic change routing, governed publication, tests, maturity boundaries, and residual risk.">
+  <meta property="og:title" content="DiffWall v0.2.0 Release Evidence | Drew Burt">
+  <meta property="og:description" content="Inspectable proof of governed developer-tooling delivery: deterministic routing, release controls, test evidence, immutable publication, and explicit limitations.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07100d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Return to Drew Burt portfolio documentation">
+        <span class="brand-mark">DB</span>
+        <span>Drew Burt</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation"><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="Release case study navigation">
+        <a href="#problem">Problem</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#limits">Limits</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="brief-hero">
+      <div class="container reveal">
+        <p class="eyebrow"><span class="status-dot"></span> Release evidence · v0.2.0 · July 28, 2026</p>
+        <h1>Turning AI-authored change risk into inspectable release evidence.</h1>
+        <p>DiffWall is an experimental, pilot-ready developer-governance tool that evaluates proposed software changes with deterministic rules, routes them to ALLOW, REVIEW, or HALT, and preserves evidence for human decision-making. This case study focuses on the governed path used to publish the immutable v0.2.0 release.</p>
+        <div class="brief-actions">
+          <a class="btn btn-primary" href="#evidence">Inspect release proof <span>↓</span></a>
+          <a class="btn btn-secondary" href="https://github.com/dburt-proex/diffwall/releases/tag/v0.2.0" target="_blank" rel="noopener noreferrer">Open v0.2.0 release ↗</a>
+        </div>
+        <div class="proof-callout">
+          <strong>Claim boundary</strong>
+          <p>The release is authorized as experimental and pilot-ready. It does not establish enterprise production readiness, independent certification, universal repository coverage, customer adoption, or guaranteed prevention.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="brief-section">
+      <div class="container">
+        <p class="kicker">Engineering problem</p>
+        <h2>Faster code generation increases the cost of weak change control.</h2>
+        <p class="brief-lead">AI coding systems can create changes quickly, but repository owners still need deterministic boundaries around sensitive paths, destructive operations, dependencies, workflows, and release infrastructure.</p>
+        <div class="role-grid">
+          <article class="role-card"><h3>Risk classification</h3><p>Translate changed files and diff content into reproducible findings instead of relying on model confidence alone.</p></article>
+          <article class="role-card"><h3>Decision routing</h3><p>Separate ordinary changes, judgment-required changes, and stop conditions through explicit ALLOW, REVIEW, and HALT states.</p></article>
+          <article class="role-card"><h3>Evidence retention</h3><p>Preserve reports, checks, inventories, and artifacts so enforcement does not erase the reason a change was blocked.</p></article>
+          <article class="role-card"><h3>Release integrity</h3><p>Bind publication to an exact commit, explicit authority, successful validation, immutable versioning, and a documented reversal path.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="brief-section section-dark">
+      <div class="container">
+        <p class="kicker">Control architecture</p>
+        <h2>Inspect, score, route, verify, and record.</h2>
+        <div class="lifecycle">
+          <article class="lifecycle-step"><span>01 / INSPECT</span><strong>Read the proposed diff</strong><p>Identify protected files, dependency changes, workflows, destructive operations, and other configured signals.</p></article>
+          <article class="lifecycle-step"><span>02 / SCORE</span><strong>Apply deterministic policy</strong><p>Calculate findings and severity from repository-local rules and thresholds.</p></article>
+          <article class="lifecycle-step"><span>03 / ROUTE</span><strong>Emit ALLOW, REVIEW, or HALT</strong><p>Make the required decision state explicit before downstream action.</p></article>
+          <article class="lifecycle-step"><span>04 / VERIFY</span><strong>Run independent checks</strong><p>Validate build parity, tests, compatibility, dependencies, packaging, and bounded performance evidence.</p></article>
+          <article class="lifecycle-step"><span>05 / RECORD</span><strong>Preserve the decision</strong><p>Link the exact commit, authority, evidence, exception, residual risks, and rollback rule.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence" class="brief-section">
+      <div class="container">
+        <p class="kicker">Inspectable proof</p>
+        <h2>What the v0.2.0 release record establishes.</h2>
+        <div class="evidence-grid">
+          <article class="evidence-card reveal">
+            <span class="evidence-index">TESTS / 96</span>
+            <h3>Two implementation surfaces validated</h3>
+            <p>The release decision records 65 passing TypeScript tests and 31 passing Python tests, plus build parity and compatibility checks.</p>
+            <a href="https://github.com/dburt-proex/diffwall/blob/v0.2.0/docs/releases/v0.2.0-decision.md#evidence" target="_blank" rel="noopener noreferrer">Inspect test evidence ↗</a>
+          </article>
+          <article class="evidence-card reveal">
+            <span class="evidence-index">AUDIT / ZERO KNOWN</span>
+            <h3>Dependency state captured</h3>
+            <p>The recorded candidate audit reported zero known vulnerabilities at every severity and preserved dependency-tree and package-inventory evidence.</p>
+            <a href="https://github.com/dburt-proex/diffwall/blob/v0.2.0/docs/releases/v0.2.0-decision.md#evidence" target="_blank" rel="noopener noreferrer">Inspect audit boundary ↗</a>
+          </article>
+          <article class="evidence-card reveal">
+            <span class="evidence-index">RELEASE / IMMUTABLE</span>
+            <h3>Publication bound to explicit authority</h3>
+            <p>The owner authorized one immutable v0.2.0 release after readiness evidence, with defects routed to a new reviewed version rather than tag movement.</p>
+            <a href="https://github.com/dburt-proex/diffwall/blob/v0.2.0/docs/releases/v0.2.0-decision.md#reversal-condition" target="_blank" rel="noopener noreferrer">Inspect reversal rule ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="brief-section section-dark">
+      <div class="container">
+        <p class="kicker">Governed exception</p>
+        <h2>The release mechanism triggered the control it was designed to enforce.</h2>
+        <p class="brief-lead">The release increment routed to HALT because it changed protected workflows, package metadata, release infrastructure, and dependency controls. The owner did not weaken the policy. The repository records a bounded, one-time override supported by independent validation, explicit maturity limits, immutable publication, and a superseding-version rollback path.</p>
+        <div class="matrix-wrap">
+          <table class="signal-table">
+            <thead><tr><th>Decision element</th><th>Recorded evidence</th><th>Boundary</th></tr></thead>
+            <tbody>
+              <tr><td>Automated route</td><td>HALT for protected release and workflow changes.</td><td>The route remained valid and visible.</td></tr>
+              <tr><td>Human authority</td><td>Repository owner explicitly authorized the bounded publication increment.</td><td>No standing override was created.</td></tr>
+              <tr><td>Release integrity</td><td>Immutable v0.2.0 publication with exact evidence and checksum.</td><td>Any defect requires a new reviewed version.</td></tr>
+              <tr><td>Maturity</td><td>Experimental, pilot-ready.</td><td>No enterprise, certification, adoption, or prevention claim.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="limits" class="brief-section">
+      <div class="container">
+        <p class="kicker">Known limitations</p>
+        <h2>Implemented proof is separated from future maturity.</h2>
+        <div class="maturity-grid">
+          <article class="maturity-card"><span class="status">Implemented</span><h3>Deterministic change routing</h3><p>Repository-local rules, findings, thresholds, and ALLOW, REVIEW, or HALT outputs are implemented and tested for covered cases.</p></article>
+          <article class="maturity-card"><span class="status">Implemented</span><h3>Release evidence and integrity</h3><p>The release record captures authority, checks, checksum, exception rationale, residual risk, and an immutable reversal rule.</p></article>
+          <article class="maturity-card"><span class="status">Not established</span><h3>Independent production validation</h3><p>No completed external buyer pilot, penetration test, long-duration production operation, or universal performance proof is claimed.</p></article>
+          <article class="maturity-card"><span class="status">Caller-owned</span><h3>Long-lived evidence retention</h3><p>Durable audit storage beyond generated reports and workflow artifacts remains the responsibility of the integrating system.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="brief-section section-dark">
+      <div class="container">
+        <p class="kicker">Source of truth</p>
+        <h2>Follow the evidence to the independent project.</h2>
+        <p class="boundary-note">DiffWall remains an independent repository and product. This portfolio page summarizes release evidence without absorbing its code, tests, release authority, or implementation status.</p>
+        <div class="source-list">
+          <a href="https://github.com/dburt-proex/diffwall/releases/tag/v0.2.0" target="_blank" rel="noopener noreferrer">Immutable v0.2.0 release</a>
+          <a href="https://github.com/dburt-proex/diffwall/blob/v0.2.0/docs/releases/v0.2.0-decision.md" target="_blank" rel="noopener noreferrer">Release decision</a>
+          <a href="https://github.com/dburt-proex/diffwall/tree/v0.2.0" target="_blank" rel="noopener noreferrer">Tagged source</a>
+          <a href="agentic-sdlc-governance.html">Agentic SDLC case study</a>
+          <a href="docs/source-of-truth.md">Portfolio source-of-truth record</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><p>© <span id="year"></span> Drew Burt</p><p>Release evidence snapshot · July 29, 2026</p><a href="#top">Top ↑</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
