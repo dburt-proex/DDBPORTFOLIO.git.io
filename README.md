@@ -22,6 +22,7 @@ Read the complete governance record: [docs/source-of-truth.md](docs/source-of-tr
 - [Assessment](https://drew-burt-portfolio.dburt30.chatgpt.site/assess) — 12-control governance diagnostic
 - [Governance Lab](https://drew-burt-portfolio.dburt30.chatgpt.site/lab) — simulated execution-control scenarios
 - [Systems](https://drew-burt-portfolio.dburt30.chatgpt.site/systems) — plain-language claims linked to public evidence
+- [Work Log](https://drew-burt-portfolio.dburt30.chatgpt.site/work-log) — review-gated morning directives, build receipts, decisions, and field notes
 - [Work with Drew](https://drew-burt-portfolio.dburt30.chatgpt.site/work-with-me) — roles, scoped work, and partnerships
 
 ## Featured systems
@@ -48,6 +49,12 @@ Read the complete governance record: [docs/source-of-truth.md](docs/source-of-tr
 5. Record the change through Git history or a pull request.
 
 There is no automatic two-way synchronization. That is intentional: evidence must be reviewed before it becomes a public claim.
+
+## Work Log submissions
+
+Use the [structured Work Log form](https://github.com/dburt-proex/DDBPORTFOLIO.git.io/issues/new?template=work-log.yml) to submit a morning directive, end-of-day receipt, build receipt, decision note, or field note.
+
+The issue remains an unpublished draft while it is open. A record enters the public Work Log only after its claims and sensitive-data boundary are reviewed and the issue is closed. Reopening the issue withdraws it from the feed. Future scheduling may create open drafts through the same contract, but it must not close or publish them without review.
 
 ## Contact
 

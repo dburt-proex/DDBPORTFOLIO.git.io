@@ -1,0 +1,102 @@
+name: Work log entry
+description: Submit a morning directive, end-of-day receipt, or live field note for review.
+title: "[Work Log] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to create a structured work-log draft. The entry remains outside the public portfolio while the GitHub issue is open. After review, close the issue to publish it. Reopen it to withdraw the entry.
+
+  - type: dropdown
+    id: entry_type
+    attributes:
+      label: Entry type
+      description: Select the operational purpose of this entry.
+      options:
+        - Morning directive
+        - End-of-day receipt
+        - Build receipt
+        - Decision note
+        - Field note
+    validations:
+      required: true
+
+  - type: input
+    id: entry_date
+    attributes:
+      label: Entry date
+      description: Use YYYY-MM-DD.
+      placeholder: "2026-07-31"
+    validations:
+      required: true
+
+  - type: input
+    id: project
+    attributes:
+      label: Project or system
+      placeholder: Operator Intelligence, DiffWall, CASA, PromptBP, or Portfolio
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: State what this entry records in one concise paragraph.
+      placeholder: What changed, what was decided, or what is planned?
+    validations:
+      required: true
+
+  - type: textarea
+    id: completed
+    attributes:
+      label: Work completed
+      description: Record completed work only. Keep planned work under Next action.
+      placeholder: List the material outputs, changes, or validated results.
+    validations:
+      required: true
+
+  - type: textarea
+    id: decisions
+    attributes:
+      label: Decisions and rationale
+      description: Record material decisions and the evidence or logic supporting them.
+      placeholder: Decision, rationale, assumptions, and rejected alternative when relevant.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Link the repository, pull request, release, test result, document, or other supporting record.
+      placeholder: Add one evidence item per line. State "No external evidence link recorded" when none exists.
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks or blockers
+      description: State any unresolved dependency, uncertainty, claim boundary, or active blocker.
+      placeholder: State "No active blocker recorded" when none exists.
+    validations:
+      required: true
+
+  - type: textarea
+    id: next_action
+    attributes:
+      label: Next action
+      description: Define the next bounded action or review gate.
+      placeholder: One owner-ready action with a clear completion condition.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: publication_review
+    attributes:
+      label: Publication check
+      description: Confirm the draft is safe to enter the review queue.
+      options:
+        - label: I removed secrets, personal data, private client information, and unsupported claims.
+          required: true
