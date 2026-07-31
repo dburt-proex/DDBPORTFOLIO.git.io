@@ -36,6 +36,7 @@ This is a governed consolidation, not a literal codebase merge. The two builds u
 | `/results` | Deterministic score, confidence, gaps, and next actions | Deployed scoring logic and documented assessment boundary |
 | `/lab` | Simulated ALLOW, REVIEW, and HALT control paths | CASA and DiffWall repositories |
 | `/systems` | Plain-language system claims and evidence links | Operator Intelligence, CASA, DiffWall, PromptBP, and VIL repositories |
+| `/work-log` | Review-gated morning directives, build receipts, decisions, and field notes | Published GitHub work-log issues and the deployed Sites rendering |
 | `/work-with-me` | Role, engagement, and partnership paths | Drew Burt's owner-confirmed availability and contact details |
 
 ## Project evidence registry
@@ -66,6 +67,15 @@ This is a governed consolidation, not a literal codebase merge. The two builds u
 3. If it does, update this repository in the same work cycle.
 4. Record the final public URL and relevant GitHub pull request in the change log below.
 
+### Work Log entry
+
+1. Submit the structured GitHub Work Log issue form.
+2. Verify completed-work claims, evidence links, dates, and project attribution.
+3. Remove secrets, personal data, private client information, and unsupported claims.
+4. Keep the GitHub issue open while the entry remains a draft.
+5. Close the issue only after review. The public Sites feed renders closed issues carrying the `[Work Log]` title prefix.
+6. Preserve the GitHub issue as the versioned source record for the public entry.
+
 ### Conflict resolution
 
 1. Project-level technical evidence wins for implementation status.
@@ -80,7 +90,7 @@ No automatic two-way content synchronization is authorized.
 
 Automatic mirroring would allow public copy to overwrite evidence records or allow stale documentation to overwrite a working public experience. Changes should move through the publishing workflow above so the evidence boundary is reviewed.
 
-Automation may later be added for read-only parity checks, broken-link detection, and change reminders. It should not publish claims without review.
+Automation may later be added for read-only parity checks, broken-link detection, change reminders, and scheduled Work Log drafts. It should not close a Work Log issue or publish claims without review.
 
 ## GitHub Pages role
 
