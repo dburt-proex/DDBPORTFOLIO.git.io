@@ -1,0 +1,28 @@
+# Environment files may contain credentials or private deployment configuration.
+.env
+.env.*
+!.env.example
+
+# Local overrides
+*.local
+
+# Dependency and build output
+node_modules/
+dist/
+build/
+.out/
+.next/
+
+# Hosting and deployment state
+.netlify/
+.vercel/
+
+# Logs and coverage
+*.log
+coverage/
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
