@@ -1,0 +1,78 @@
+name: Environment Boundary
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate-environment-boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reject tracked environment files
+        shell: bash
+        run: |
+          set -euo pipefail
+          prohibited="$(git ls-files | grep -E '(^|/)\.env($|\.)' | grep -vE '(^|/)\.env\.example$' || true)"
+          if [ -n "$prohibited" ]; then
+            echo "Prohibited environment files are tracked:"
+            echo "$prohibited"
+            exit 1
+          fi
+
+      - name: Validate private placeholders remain empty
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('.env.example')
+          if not path.exists():
+              raise SystemExit('.env.example is required')
+
+          private_names = {
+              'CONTACT_EMAIL_API_KEY',
+              'CAPTCHA_SECRET_KEY',
+              'GITHUB_READ_TOKEN',
+              'NOTION_API_TOKEN',
+              'NOTION_BLOG_DATABASE_ID',
+              'AIRTABLE_PERSONAL_ACCESS_TOKEN',
+              'AIRTABLE_BASE_ID',
+              'OPENAI_API_KEY',
+              'SESSION_SECRET',
+              'CSRF_SECRET',
+              'REVALIDATION_SECRET',
+              'WEBHOOK_SIGNING_SECRET',
+          }
+
+          violations = []
+          for line_number, raw_line in enumerate(path.read_text(encoding='utf-8').splitlines(), 1):
+              line = raw_line.strip()
+              if not line or line.startswith('#') or '=' not in line:
+                  continue
+              name, value = line.split('=', 1)
+              if name.strip() in private_names and value.strip().strip('"\''):
+                  violations.append(f'{name.strip()} at line {line_number}')
+
+          if violations:
+              raise SystemExit('Private placeholders must remain empty: ' + ', '.join(violations))
+          PY
+
+      - name: Scan tracked text for obvious credential signatures
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git grep -nEI '(sk-proj-[A-Za-z0-9_-]{20,}|gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|pat[A-Za-z0-9_-]{20,}|re_[A-Za-z0-9_-]{20,})' -- ':!*.md' ':!.env.example'; then
+            echo "Potential credential signature detected. Remove it and rotate the credential if it was real."
+            exit 1
+          fi
