@@ -52,7 +52,7 @@ README.md                           Public entry point: source-of-truth model, r
 
 ## Stack and build
 
-Static HTML, CSS, and vanilla JS. **There is no build step, no package manager, no test suite, and no CI workflow.** Files are served verbatim by GitHub Pages.
+Static HTML, CSS, and vanilla JS. **There is no site build step, package manager, or product test suite.** Files are served verbatim by GitHub Pages. The sole repository CI workflow is `.github/workflows/diffwall.yml`, which runs the deterministic DiffWall gate on pull requests and does not build or publish the site.
 
 Do not introduce a framework, bundler, or dependency manifest unless explicitly asked. Adding one changes the deployment model.
 
@@ -62,7 +62,7 @@ Preview locally:
 python3 -m http.server 8000
 ```
 
-Verification is manual: open the affected pages, check that links resolve, and check the layout at desktop and mobile widths (breakpoints are 900px and 720px).
+Site verification is manual: open the affected pages, check that links resolve, and check the layout at desktop and mobile widths (breakpoints are 900px and 720px). DiffWall separately evaluates pull-request change risk.
 
 ## Page conventions
 
