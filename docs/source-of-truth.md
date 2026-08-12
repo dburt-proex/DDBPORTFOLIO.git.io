@@ -106,5 +106,6 @@ Existing technical briefs and case studies remain available as supporting docume
 ## Change log
 
 | Date | Change | GitHub record | Public deployment |
+| 2026-08-12 | Published the Agentic Readiness Audit founding-pilot route and updated the canonical portfolio URL. | [PR #17](https://github.com/dburt-proex/DDBPORTFOLIO.git.io/pull/17) | [Agentic Readiness Audit](https://drew-burt-portfolio.dburt-proex.chatgpt.site/agentic-readiness-audit) |
 | --- | --- | --- | --- |
 | 2026-07-19 | Established Sites as public authority and GitHub as versioned documentation authority. | [PR #9](https://github.com/dburt-proex/DDBPORTFOLIO.git.io/pull/9) | [Sites version 10](https://drew-burt-portfolio.dburt-proex.chatgpt.site) |
