@@ -8,7 +8,7 @@ This is **not** the public portfolio website. It is the **versioned documentatio
 
 | Scope | Canonical authority |
 | --- | --- |
-| Public positioning, navigation, assessment, lab, contact | [ChatGPT Sites portfolio](https://drew-burt-portfolio.dburt30.chatgpt.site) |
+| Public positioning, navigation, assessment, lab, contact | [ChatGPT Sites portfolio](https://drew-burt-portfolio.dburt-proex.chatgpt.site) |
 | Evidence map, claim boundaries, maturity classifications, change history | **This repository** |
 | Code, tests, releases, implementation status | Each project's own repository |
 

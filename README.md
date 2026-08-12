@@ -1,6 +1,6 @@
 # Drew Burt Portfolio
 
-**Canonical public portfolio:** [drew-burt-portfolio.dburt30.chatgpt.site](https://drew-burt-portfolio.dburt30.chatgpt.site)
+**Canonical public portfolio:** [drew-burt-portfolio.dburt30.chatgpt.site](https://drew-burt-portfolio.dburt-proex.chatgpt.site)
 
 This repository is the versioned documentation and evidence layer for Drew Burt's public portfolio. It records the claims, proof links, maturity boundaries, and publishing rules behind the public experience.
 
@@ -8,7 +8,7 @@ This repository is the versioned documentation and evidence layer for Drew Burt'
 
 | Scope | Canonical authority | Purpose |
 | --- | --- | --- |
-| Public positioning, navigation, assessment, lab, and contact paths | [ChatGPT Sites portfolio](https://drew-burt-portfolio.dburt30.chatgpt.site) | The current visitor-facing experience |
+| Public positioning, navigation, assessment, lab, and contact paths | [ChatGPT Sites portfolio](https://drew-burt-portfolio.dburt-proex.chatgpt.site) | The current visitor-facing experience |
 | Portfolio evidence map, maturity boundaries, and change history | This repository | Versioned documentation and review |
 | Code, tests, releases, and project-specific status | Each project's canonical repository | Technical implementation evidence |
 
@@ -18,12 +18,13 @@ Read the complete governance record: [docs/source-of-truth.md](docs/source-of-tr
 
 ## Public route map
 
-- [Home](https://drew-burt-portfolio.dburt30.chatgpt.site/) — positioning and assessment-to-enforcement model
-- [Assessment](https://drew-burt-portfolio.dburt30.chatgpt.site/assess) — 12-control governance diagnostic
-- [Governance Lab](https://drew-burt-portfolio.dburt30.chatgpt.site/lab) — simulated execution-control scenarios
-- [Systems](https://drew-burt-portfolio.dburt30.chatgpt.site/systems) — plain-language claims linked to public evidence
-- [Work Log](https://drew-burt-portfolio.dburt30.chatgpt.site/work-log) — review-gated morning directives, build receipts, decisions, and field notes
-- [Work with Drew](https://drew-burt-portfolio.dburt30.chatgpt.site/work-with-me) — roles, scoped work, and partnerships
+- [Home](https://drew-burt-portfolio.dburt-proex.chatgpt.site/) — positioning and assessment-to-enforcement model
+- [Assessment](https://drew-burt-portfolio.dburt-proex.chatgpt.site/assess) — 12-control governance diagnostic
+- [Agentic Readiness Audit](https://drew-burt-portfolio.dburt-proex.chatgpt.site/agentic-readiness-audit) — $1,250 founding-pilot assessment for one AI-enabled workflow, with explicit delivery and authority boundaries
+- [Governance Lab](https://drew-burt-portfolio.dburt-proex.chatgpt.site/lab) — simulated execution-control scenarios
+- [Systems](https://drew-burt-portfolio.dburt-proex.chatgpt.site/systems) — plain-language claims linked to public evidence
+- [Work Log](https://drew-burt-portfolio.dburt-proex.chatgpt.site/work-log) — review-gated morning directives, build receipts, decisions, and field notes
+- [Work with Drew](https://drew-burt-portfolio.dburt-proex.chatgpt.site/work-with-me) — roles, scoped work, and partnerships
 
 ## Featured systems
 
@@ -35,6 +36,7 @@ Read the complete governance record: [docs/source-of-truth.md](docs/source-of-tr
 
 ## Supporting evidence
 
+- [Agentic Readiness Audit](https://drew-burt-portfolio.dburt-proex.chatgpt.site/agentic-readiness-audit) — founding-pilot scope, price, delivery package, and assessment boundary.
 - [AI Governance for Developer Tooling](docs/ai-governance-developer-tooling.md) — source brief and maturity appendix.
 - [Rendered capability brief](governance-developer-tooling.html) — browser-readable evidence map.
 - [Agentic SDLC governance case study](agentic-sdlc-governance.html) — developer-control evidence.
