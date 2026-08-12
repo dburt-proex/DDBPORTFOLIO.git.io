@@ -3,7 +3,7 @@
 **Owner:** Drew Donald Burt  
 **Effective:** July 19, 2026  
 **Status:** Active  
-**Public canonical URL:** https://drew-burt-portfolio.dburt30.chatgpt.site  
+**Public canonical URL:** https://drew-burt-portfolio.dburt-proex.chatgpt.site  
 **Documentation repository:** https://github.com/dburt-proex/DDBPORTFOLIO.git.io
 
 ## Decision
@@ -33,6 +33,7 @@ This is a governed consolidation, not a literal codebase merge. The two builds u
 | --- | --- | --- |
 | `/` | Positioning and assessment-to-enforcement operating model | This registry plus the linked project repositories |
 | `/assess` | Directional 12-control governance diagnostic | Operator Intelligence methodology and the deployed assessment logic |
+| `/agentic-readiness-audit` | Bounded Agentic Readiness Audit for one AI-enabled workflow before authority expands | Owner-approved commercial scope and the deployed Sites route |
 | `/results` | Deterministic score, confidence, gaps, and next actions | Deployed scoring logic and documented assessment boundary |
 | `/lab` | Simulated ALLOW, REVIEW, and HALT control paths | CASA and DiffWall repositories |
 | `/systems` | Plain-language system claims and evidence links | Operator Intelligence, CASA, DiffWall, PromptBP, and VIL repositories |
@@ -106,4 +107,4 @@ Existing technical briefs and case studies remain available as supporting docume
 
 | Date | Change | GitHub record | Public deployment |
 | --- | --- | --- | --- |
-| 2026-07-19 | Established Sites as public authority and GitHub as versioned documentation authority. | [PR #9](https://github.com/dburt-proex/DDBPORTFOLIO.git.io/pull/9) | [Sites version 10](https://drew-burt-portfolio.dburt30.chatgpt.site) |
+| 2026-07-19 | Established Sites as public authority and GitHub as versioned documentation authority. | [PR #9](https://github.com/dburt-proex/DDBPORTFOLIO.git.io/pull/9) | [Sites version 10](https://drew-burt-portfolio.dburt-proex.chatgpt.site) |
