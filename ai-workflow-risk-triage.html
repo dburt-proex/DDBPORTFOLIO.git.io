@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Workflow Risk Triage | DAXXER</title>
+  <meta name="description" content="A deterministic prototype for evaluating AI workflow autonomy, permissions, evidence, and operational controls." />
+  <style>
+    :root{
+      --bg:#0f1115;--panel:#171a20;--panel-2:#1e222a;--line:#303643;
+      --text:#f5f6fa;--muted:#aab0bc;--lav:#b7a4ff;--lav-2:#d8ceff;
+      --allow:#2f9e75;--review:#b88a2b;--halt:#9f3f52;--shadow:0 18px 55px rgba(0,0,0,.28)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;background:
+      radial-gradient(circle at 85% 0%,rgba(183,164,255,.10),transparent 28%),
+      linear-gradient(180deg,#0d0f13 0%,#11141a 100%);
+      color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      min-height:100vh
+    }
+    .shell{width:min(1180px,calc(100% - 32px));margin:0 auto}
+    header{padding:54px 0 26px}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--lav-2);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:2px;background:var(--lav);box-shadow:0 0 18px rgba(183,164,255,.5)}
+    h1{font-size:clamp(2.25rem,5vw,4.9rem);line-height:.96;letter-spacing:-.055em;margin:16px 0 16px;max-width:850px}
+    .lead{color:var(--muted);font-size:clamp(1rem,2vw,1.2rem);line-height:1.7;max-width:820px;margin:0}
+    .notice{margin-top:18px;color:#c6cad3;font-size:.9rem}
+    main{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);gap:22px;padding:22px 0 70px}
+    .card{background:linear-gradient(180deg,rgba(29,33,41,.98),rgba(21,24,30,.98));border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+    .form-card{padding:24px}
+    .result-card{padding:24px;position:sticky;top:18px;align-self:start}
+    .section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px}
+    .section-head h2{font-size:1.1rem;margin:0 0 5px;letter-spacing:-.02em}
+    .section-head p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.5}
+    label{display:block;color:#d9dce4;font-size:.83rem;font-weight:750;margin-bottom:8px}
+    textarea,select{
+      width:100%;border:1px solid #383e4a;background:#11141a;color:var(--text);border-radius:12px;
+      padding:13px 14px;font:inherit;outline:none;transition:.18s border-color,.18s box-shadow
+    }
+    textarea{min-height:112px;resize:vertical}
+    textarea:focus,select:focus{border-color:var(--lav);box-shadow:0 0 0 3px rgba(183,164,255,.12)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .field{margin-bottom:16px}
+    .toggle-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .toggle-row input{position:absolute;opacity:0;pointer-events:none}
+    .toggle-row label{
+      margin:0;padding:11px 12px;text-align:center;border:1px solid #3a404d;border-radius:11px;background:#12151b;
+      color:#c8ccd5;cursor:pointer;transition:.16s
+    }
+    .toggle-row input:checked + label{border-color:var(--lav);background:rgba(183,164,255,.11);color:#f1edff}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+    button{appearance:none;border:0;border-radius:12px;padding:12px 16px;font:inherit;font-weight:800;cursor:pointer;transition:.16s transform,.16s opacity,.16s background}
+    button:hover{transform:translateY(-1px)}
+    .primary{background:var(--lav);color:#17131f}
+    .secondary{background:#272c35;color:#f4f5f8;border:1px solid #3b424f}
+    .ghost{background:transparent;color:#cfd3dc;border:1px solid #3b424f}
+    .score-wrap{display:grid;grid-template-columns:112px 1fr;gap:18px;align-items:center;margin:12px 0 22px}
+    .score-ring{
+      width:112px;height:112px;border-radius:50%;display:grid;place-items:center;
+      background:conic-gradient(var(--lav) calc(var(--score) * 1%),#2a2f38 0);position:relative
+    }
+    .score-ring:before{content:"";position:absolute;inset:10px;background:#15181e;border-radius:50%}
+    .score-number{position:relative;z-index:1;text-align:center}
+    .score-number strong{display:block;font-size:1.8rem;line-height:1}
+    .score-number span{font-size:.72rem;color:var(--muted)}
+    .decision{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;letter-spacing:-.04em;margin:0}
+    .decision-sub{color:var(--muted);line-height:1.55;margin:7px 0 0;font-size:.92rem}
+    .badge{display:inline-flex;align-items:center;border:1px solid currentColor;border-radius:999px;padding:6px 9px;font-size:.74rem;font-weight:850;letter-spacing:.08em;margin-bottom:10px}
+    .allow{color:#67d2a9}.review{color:#e2b75f}.halt{color:#df7186}
+    .divider{height:1px;background:var(--line);margin:22px 0}
+    .list h3{font-size:.86rem;text-transform:uppercase;letter-spacing:.09em;color:#c9cdda;margin:0 0 12px}
+    .item{padding:12px 13px;border:1px solid #313744;background:#12151a;border-radius:12px;margin-bottom:9px;line-height:1.5;font-size:.9rem;color:#dfe2e8}
+    .item strong{color:#fff}
+    .empty{border:1px dashed #3a414e;border-radius:16px;padding:28px 18px;color:var(--muted);text-align:center;line-height:1.6}
+    .logic{margin-top:14px;color:#8f96a3;font-size:.78rem;line-height:1.55}
+    footer{padding:0 0 34px;color:#858c98;font-size:.8rem;text-align:center}
+    @media(max-width:880px){
+      main{grid-template-columns:1fr}
+      .result-card{position:static}
+    }
+    @media(max-width:600px){
+      .shell{width:min(100% - 20px,1180px)}
+      header{padding-top:34px}
+      .grid{grid-template-columns:1fr}
+      .form-card,.result-card{padding:18px;border-radius:18px}
+      .score-wrap{grid-template-columns:92px 1fr}
+      .score-ring{width:92px;height:92px}
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="eyebrow"><span class="dot"></span>DAXXER Prototype</div>
+      <h1>AI Workflow Risk Triage</h1>
+      <p class="lead">Evaluate an AI workflow’s autonomy, permissions, evidence, and operational controls before deployment.</p>
+      <p class="notice">Deterministic prototype — no model call, no backend, no hidden scoring.</p>
+    </header>
+
+    <main>
+      <section class="card form-card" aria-labelledby="assessment-title">
+        <div class="section-head">
+          <div>
+            <h2 id="assessment-title">Workflow assessment</h2>
+            <p>Describe the workflow, then set the control conditions.</p>
+          </div>
+          <button class="ghost" id="demoBtn" type="button">Load demo</button>
+        </div>
+
+        <div class="field">
+          <label for="description">Workflow description</label>
+          <textarea id="description" placeholder="Example: AI assistant drafts support replies from approved public documentation. A human sends the final response."></textarea>
+        </div>
+
+        <div class="grid">
+          <div class="field">
+            <label for="autonomy">Autonomy level</label>
+            <select id="autonomy">
+              <option value="advisory">Advisory</option>
+              <option value="assisted">Assisted</option>
+              <option value="autonomous">Autonomous</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="sensitivity">Data sensitivity</label>
+            <select id="sensitivity">
+              <option value="public">Public</option>
+              <option value="internal">Internal</option>
+              <option value="confidential">Confidential</option>
+              <option value="restricted">Restricted</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="field" data-name="external">
+            <label>Can execute external actions?</label>
+            <div class="toggle-row">
+              <input id="external-no" type="radio" name="external" value="no" checked><label for="external-no">No</label>
+              <input id="external-yes" type="radio" name="external" value="yes"><label for="external-yes">Yes</label>
+            </div>
+          </div>
+          <div class="field" data-name="approval">
+            <label>Human approval before consequential actions?</label>
+            <div class="toggle-row">
+              <input id="approval-no" type="radio" name="approval" value="no"><label for="approval-no">No</label>
+              <input id="approval-yes" type="radio" name="approval" value="yes" checked><label for="approval-yes">Yes</label>
+            </div>
+          </div>
+          <div class="field" data-name="logging">
+            <label>Actions logged with evidence?</label>
+            <div class="toggle-row">
+              <input id="logging-no" type="radio" name="logging" value="no"><label for="logging-no">No</label>
+              <input id="logging-yes" type="radio" name="logging" value="yes" checked><label for="logging-yes">Yes</label>
+            </div>
+          </div>
+          <div class="field" data-name="least">
+            <label>Permissions are least-privilege?</label>
+            <div class="toggle-row">
+              <input id="least-no" type="radio" name="least" value="no"><label for="least-no">No</label>
+              <input id="least-yes" type="radio" name="least" value="yes" checked><label for="least-yes">Yes</label>
+            </div>
+          </div>
+          <div class="field" data-name="rollback">
+            <label>Rollback or recovery mechanism exists?</label>
+            <div class="toggle-row">
+              <input id="rollback-no" type="radio" name="rollback" value="no"><label for="rollback-no">No</label>
+              <input id="rollback-yes" type="radio" name="rollback" value="yes" checked><label for="rollback-yes">Yes</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="primary" id="assessBtn" type="button">Assess workflow</button>
+          <button class="secondary" id="resetBtn" type="button">Reset</button>
+        </div>
+      </section>
+
+      <aside class="card result-card" aria-live="polite">
+        <div id="emptyState" class="empty">
+          Complete the controls and select <strong>Assess workflow</strong> to generate a deterministic readiness decision.
+        </div>
+
+        <div id="resultState" hidden>
+          <div class="score-wrap">
+            <div class="score-ring" id="scoreRing" style="--score:0">
+              <div class="score-number"><strong id="scoreValue">0</strong><span>READINESS</span></div>
+            </div>
+            <div>
+              <div class="badge review" id="decisionBadge">REVIEW</div>
+              <p class="decision" id="decisionText">REVIEW</p>
+              <p class="decision-sub" id="decisionSummary"></p>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="list">
+            <h3>Why this decision?</h3>
+            <div id="findings"></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="list">
+            <h3>Recommended controls</h3>
+            <div id="controls"></div>
+          </div>
+
+          <p class="logic">Scoring begins at 100 and applies explicit penalties for higher autonomy, sensitive data, external action capability, and missing controls. Hard-stop combinations override the numeric score.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>Prototype by Drew Burt — DAXXER</footer>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const selected = (name) => document.querySelector('input[name="' + name + '"]:checked').value;
+    const setRadio = (name, value) => { document.querySelector('input[name="' + name + '"][value="' + value + '"]').checked = true; };
+
+    function assess() {
+      const state = {
+        description: $("description").value.trim(),
+        autonomy: $("autonomy").value,
+        sensitivity: $("sensitivity").value,
+        external: selected("external"),
+        approval: selected("approval"),
+        logging: selected("logging"),
+        least: selected("least"),
+        rollback: selected("rollback")
+      };
+
+      let score = 100;
+      const findings = [];
+      const controls = [];
+
+      if (state.autonomy === "assisted") {
+        score -= 10;
+        findings.push("<strong>Assisted execution:</strong> the workflow can influence operational outcomes beyond pure advice.");
+      }
+      if (state.autonomy === "autonomous") {
+        score -= 25;
+        findings.push("<strong>Autonomous execution:</strong> higher blast radius requires stronger preventive and recovery controls.");
+      }
+
+      if (state.sensitivity === "internal") score -= 5;
+      if (state.sensitivity === "confidential") {
+        score -= 15;
+        findings.push("<strong>Confidential data:</strong> data handling and access boundaries are material to release readiness.");
+      }
+      if (state.sensitivity === "restricted") {
+        score -= 25;
+        findings.push("<strong>Restricted data:</strong> the workflow carries elevated confidentiality and access-control risk.");
+      }
+
+      if (state.external === "yes") {
+        score -= 20;
+        findings.push("<strong>External action capability:</strong> mistakes can propagate outside the controlled workspace.");
+      }
+
+      if (state.approval === "no") {
+        score -= state.external === "yes" ? 25 : 10;
+        findings.push("<strong>No human approval gate:</strong> consequential execution is not explicitly intercepted.");
+        controls.push("Add a human approval gate for consequential or externally visible actions.");
+      } else {
+        findings.push("<strong>Human approval present:</strong> consequential actions have an explicit review boundary.");
+      }
+
+      if (state.logging === "no") {
+        score -= 15;
+        findings.push("<strong>Insufficient evidence capture:</strong> actions may be difficult to reconstruct or audit.");
+        controls.push("Record normalized inputs, decision rationale, action result, and timestamped evidence.");
+      } else {
+        findings.push("<strong>Evidence logging present:</strong> execution can be reconstructed and reviewed.");
+      }
+
+      if (state.least === "no") {
+        score -= 15;
+        findings.push("<strong>Permissions are too broad:</strong> available capability may exceed workflow necessity.");
+        controls.push("Reduce credentials, scopes, tools, and data access to the minimum required capability set.");
+      } else {
+        findings.push("<strong>Least-privilege permissions present:</strong> capability is bounded to the workflow need.");
+      }
+
+      if (state.rollback === "no") {
+        score -= 10;
+        findings.push("<strong>No recovery path:</strong> harmful or incorrect changes may be difficult to reverse.");
+        controls.push("Define rollback, compensating actions, or a tested recovery procedure before release.");
+      } else {
+        findings.push("<strong>Recovery control present:</strong> the workflow has a defined reversal or remediation path.");
+      }
+
+      score = Math.max(0, Math.min(100, score));
+
+      const hardHalt =
+        (state.sensitivity === "restricted" && state.autonomy === "autonomous" && state.external === "yes" && state.approval === "no") ||
+        (state.external === "yes" && state.approval === "no" && state.logging === "no") ||
+        (state.autonomy === "autonomous" && state.external === "yes" && state.least === "no" && state.rollback === "no");
+
+      let decision = "REVIEW";
+      if (hardHalt || score < 45) decision = "HALT";
+      else if (score >= 80 && !(state.external === "yes" && state.approval === "no")) decision = "ALLOW";
+
+      if (controls.length === 0) {
+        if (decision === "ALLOW") controls.push("Maintain current control coverage and re-assess when autonomy, permissions, data class, or external actions change.");
+        else controls.push("Validate the workflow boundary and document owner-approved release criteria before deployment.");
+      }
+
+      const topFindings = findings.slice(0,5);
+      const topControls = controls.slice(0,5);
+
+      $("scoreValue").textContent = score;
+      $("scoreRing").style.setProperty("--score", score);
+      $("decisionText").textContent = decision;
+      $("decisionBadge").textContent = decision;
+      $("decisionBadge").className = "badge " + decision.toLowerCase();
+      $("decisionSummary").textContent =
+        decision === "ALLOW" ? "Current inputs indicate a controlled, lower-risk release posture." :
+        decision === "REVIEW" ? "Material risk or control gaps require owner review before release." :
+        "A high-risk combination or severe control deficit should block release until remediated.";
+
+      $("findings").innerHTML = topFindings.map(x => '<div class="item">' + x + '</div>').join("");
+      $("controls").innerHTML = topControls.map(x => '<div class="item">' + x + '</div>').join("");
+      $("emptyState").hidden = true;
+      $("resultState").hidden = false;
+    }
+
+    function loadDemo() {
+      $("description").value = "AI assistant summarizes approved public product documentation and drafts internal release notes. It cannot publish or modify external systems.";
+      $("autonomy").value = "advisory";
+      $("sensitivity").value = "public";
+      setRadio("external","no");
+      setRadio("approval","yes");
+      setRadio("logging","yes");
+      setRadio("least","yes");
+      setRadio("rollback","yes");
+      assess();
+    }
+
+    function reset() {
+      $("description").value = "";
+      $("autonomy").value = "advisory";
+      $("sensitivity").value = "public";
+      setRadio("external","no");
+      setRadio("approval","yes");
+      setRadio("logging","yes");
+      setRadio("least","yes");
+      setRadio("rollback","yes");
+      $("resultState").hidden = true;
+      $("emptyState").hidden = false;
+    }
+
+    $("assessBtn").addEventListener("click", assess);
+    $("demoBtn").addEventListener("click", loadDemo);
+    $("resetBtn").addEventListener("click", reset);
+  </script>
+</body>
+</html>
