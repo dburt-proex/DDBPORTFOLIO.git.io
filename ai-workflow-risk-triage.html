@@ -74,7 +74,7 @@
     .item{padding:12px 13px;border:1px solid #313744;background:#12151a;border-radius:12px;margin-bottom:9px;line-height:1.5;font-size:.9rem;color:#dfe2e8}
     .item strong{color:#fff}
     .empty{border:1px dashed #3a414e;border-radius:16px;padding:28px 18px;color:var(--muted);text-align:center;line-height:1.6}
-    .logic{margin-top:14px;color:#8f96a3;font-size:.78rem;line-height:1.55}
+    .logic{margin-top:14px;color:#8f96a3;font-size:.78rem;line-height:1.55}\n    .invalid{border-color:#9f3f52!important;box-shadow:0 0 0 3px rgba(159,63,82,.14)!important}\n    .error{margin:7px 0 0;color:#df7186;font-size:.8rem}
     footer{padding:0 0 34px;color:#858c98;font-size:.8rem;text-align:center}
     @media(max-width:880px){
       main{grid-template-columns:1fr}
@@ -111,7 +111,7 @@
 
         <div class="field">
           <label for="description">Workflow description</label>
-          <textarea id="description" placeholder="Example: AI assistant drafts support replies from approved public documentation. A human sends the final response."></textarea>
+          <textarea id="description" placeholder="Example: AI assistant drafts support replies from approved public documentation. A human sends the final response."></textarea>\n          <p class="error" id="descriptionError" hidden>Describe the workflow before running the assessment.</p>
         </div>
 
         <div class="grid">
@@ -234,64 +234,74 @@
         rollback: selected("rollback")
       };
 
+      if (!state.description) {
+        $("description").classList.add("invalid");
+        $("descriptionError").hidden = false;
+        $("description").focus();
+        return;
+      }
+      $("description").classList.remove("invalid");
+      $("descriptionError").hidden = true;
+
       let score = 100;
-      const findings = [];
+      const risks = [];
+      const strengths = [];
       const controls = [];
 
       if (state.autonomy === "assisted") {
         score -= 10;
-        findings.push("<strong>Assisted execution:</strong> the workflow can influence operational outcomes beyond pure advice.");
+        risks.push("<strong>Assisted execution:</strong> the workflow can influence operational outcomes beyond pure advice.");
       }
       if (state.autonomy === "autonomous") {
         score -= 25;
-        findings.push("<strong>Autonomous execution:</strong> higher blast radius requires stronger preventive and recovery controls.");
+        risks.push("<strong>Autonomous execution:</strong> higher blast radius requires stronger preventive and recovery controls.");
       }
 
       if (state.sensitivity === "internal") score -= 5;
       if (state.sensitivity === "confidential") {
         score -= 15;
-        findings.push("<strong>Confidential data:</strong> data handling and access boundaries are material to release readiness.");
+        risks.push("<strong>Confidential data:</strong> data handling and access boundaries are material to release readiness.");
       }
       if (state.sensitivity === "restricted") {
         score -= 25;
-        findings.push("<strong>Restricted data:</strong> the workflow carries elevated confidentiality and access-control risk.");
+        risks.push("<strong>Restricted data:</strong> the workflow carries elevated confidentiality and access-control risk.");
       }
 
       if (state.external === "yes") {
         score -= 20;
-        findings.push("<strong>External action capability:</strong> mistakes can propagate outside the controlled workspace.");
+        risks.push("<strong>External action capability:</strong> mistakes can propagate outside the controlled workspace.");
       }
 
       if (state.approval === "no") {
         score -= state.external === "yes" ? 25 : 10;
-        findings.push("<strong>No human approval gate:</strong> consequential execution is not explicitly intercepted.");
+        risks.push("<strong>No human approval gate:</strong> consequential execution is not explicitly intercepted.");
         controls.push("Add a human approval gate for consequential or externally visible actions.");
       } else {
-        findings.push("<strong>Human approval present:</strong> consequential actions have an explicit review boundary.");
+        strengths.push("<strong>Human approval present:</strong> consequential actions have an explicit review boundary.");
       }
 
       if (state.logging === "no") {
         score -= 15;
-        findings.push("<strong>Insufficient evidence capture:</strong> actions may be difficult to reconstruct or audit.");
+        risks.push("<strong>Insufficient evidence capture:</strong> actions may be difficult to reconstruct or audit.");
         controls.push("Record normalized inputs, decision rationale, action result, and timestamped evidence.");
       } else {
-        findings.push("<strong>Evidence logging present:</strong> execution can be reconstructed and reviewed.");
+        strengths.push("<strong>Evidence logging present:</strong> execution can be reconstructed and reviewed.");
       }
 
       if (state.least === "no") {
         score -= 15;
-        findings.push("<strong>Permissions are too broad:</strong> available capability may exceed workflow necessity.");
+        risks.push("<strong>Permissions are too broad:</strong> available capability may exceed workflow necessity.");
         controls.push("Reduce credentials, scopes, tools, and data access to the minimum required capability set.");
       } else {
-        findings.push("<strong>Least-privilege permissions present:</strong> capability is bounded to the workflow need.");
+        strengths.push("<strong>Least-privilege permissions present:</strong> capability is bounded to the workflow need.");
       }
 
       if (state.rollback === "no") {
         score -= 10;
-        findings.push("<strong>No recovery path:</strong> harmful or incorrect changes may be difficult to reverse.");
+        risks.push("<strong>No recovery path:</strong> harmful or incorrect changes may be difficult to reverse.");
         controls.push("Define rollback, compensating actions, or a tested recovery procedure before release.");
       } else {
-        findings.push("<strong>Recovery control present:</strong> the workflow has a defined reversal or remediation path.");
+        strengths.push("<strong>Recovery control present:</strong> the workflow has a defined reversal or remediation path.");
       }
 
       score = Math.max(0, Math.min(100, score));
@@ -310,7 +320,7 @@
         else controls.push("Validate the workflow boundary and document owner-approved release criteria before deployment.");
       }
 
-      const topFindings = findings.slice(0,5);
+      const topFindings = [...risks, ...strengths].slice(0,5);
       const topControls = controls.slice(0,5);
 
       $("scoreValue").textContent = score;
@@ -343,6 +353,8 @@
 
     function reset() {
       $("description").value = "";
+      $("description").classList.remove("invalid");
+      $("descriptionError").hidden = true;
       $("autonomy").value = "advisory";
       $("sensitivity").value = "public";
       setRadio("external","no");
